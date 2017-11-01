@@ -1,0 +1,33 @@
+{include file="public/header" title="产品详情"/}
+    
+    
+    <!-- start page -->
+    <div class="page">
+    
+    		
+            <div class="simplebox">
+            	<h1 class="titleh">产品详情</h1>
+                <div class="content">
+                		
+                        
+                	<!-- start statistics -->
+                    <ul class="statistics">
+                    	<li>产品名称	<p>	<span class="green">{$goods_info.title}</span></p>	</li>
+						<li>含税面价<p><span class="green">{$goods_info.price}</span></p> </li>
+                    	<li>零件号<p>	<span class="green">{$goods_info.PNO}</span></p>	</li>
+                    	<li>原厂参考零件号<p><span class="green">{$goods_info.old_PNO}</span></p>	</li>
+                    	<li>品牌<p><span class="green">{:get_title('brand', $goods_info[brand_id])}</span></p>	</li>
+                    	<li>适用机型<p><span class="green">{:get_type_title($goods_info[id])}</span></p>	</li>
+                    	<li>类别<p><span class="green">{:get_title('brand', $goods_info[category_id])}</span></p>	</li>
+                    </ul>
+                	<!-- end statistics -->
+                  
+                </div>
+      </div>
+            
+			<!-- start top button -->
+            <div class="topbutton"><a href="#header"><span>Top</span></a></div>
+            <!-- end top button -->           
+            
+            <!-- start footer -->
+{include file="public/footer"/}

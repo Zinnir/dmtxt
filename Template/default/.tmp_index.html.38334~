@@ -1,0 +1,6 @@
+<include file="public:header" title="11111" />
+
+这是首页
+
+<go:include filename="footer.html" title="标题"/>
+

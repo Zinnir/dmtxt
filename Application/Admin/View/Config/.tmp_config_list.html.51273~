@@ -1,0 +1,154 @@
+{include file="Public/header" title="系统字段列表"/}
+    
+    <div  id="container"  class="container-fluid">
+      <div  class="row-fluid">
+
+<!-- 左侧导航栏 start -->
+{include file="Public/sidebar"/}
+<!-- 左侧导航栏 end -->
+
+<div  id="content"  class="span10">
+  <div  class="pageTit page-header">
+    <h1>系统字段管理</h1>
+    
+  </div>
+  
+  
+  <div  class="dataBox">
+    <table  class="table table-bordered table-striped center">
+      <thead>
+        <tr>
+          <th>字段标示符</th>
+          <th>字段标题</th>
+          <th>字段备注</th>
+          <th>字段类型</th>
+          <th>是否必填</th>
+          <th>状态</th>
+          <th>类型</th>
+          <th>排序</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+          
+        {foreach name="config_list" item="vo" }
+        <tr>
+          <td><a href="#">{$vo.field}</a></td>
+          <td>{$vo.title}</td>
+          <td>{$vo.mark}</td>
+          <td>{$vo.field_type}</td>
+          <td>{if condition="$vo.is_required eq 1"}必填{else/}非必填{/if}</td>
+          <td>{if condition="$vo.status eq 1"}正常{else/}禁用{/if}</td>
+          <td>{if condition="$vo.is_system eq 1"}<font color="red">系统字段</font>{else/}自定义字段{/if}</td>
+          <td><input class="js_sort" type='text' value='{$vo.sort}' data-id="{$vo.id}" style="width:30px;" title="数字越小越靠前"/></td>
+          <td>
+            {if condition="$vo.status eq 1"}
+            <button class="btn btn-xs btn-default js_update_status" data-id="{$vo.id}" data-is-system="{$vo.is_system}">禁用 </button>
+            {else/}
+            <button class="btn btn-xs btn-success js_update_status" data-id="{$vo.id}" data-is-system="{$vo.is_system}">恢复 </button>
+            {/if}
+            <button class="btn btn-xs btn-warning js_edit" data-id="{$vo.id}" data-is-system="{$vo.is_system}">修改</button>
+            <button class="btn btn-xs btn-danger js_del" data-id="{$vo.id}" data-is-system="{$vo.is_system}">删除 </button>
+          </td>
+        </tr>
+        {/foreach}
+           
+        
+      </tbody>
+    </table>
+  </div>
+  
+  
+</div>
+      </div>
+    </div>
+<script>
+    $(function(){
+        
+        //初始化时间选择插件
+        $('.start_time,.deadline_time').datepicker({
+          dateFormat: 'yy-mm-dd 00:00:00',
+          showButtonPanel: true
+        });
+  
+        $('.end_time').datepicker({
+          dateFormat: 'yy-mm-dd 23:59:59',
+          showButtonPanel: true
+        });
+        
+        //禁用,恢复操作
+        $(".js_update_status").click(function(){
+            var Id = $(this).data('id');
+            var IsSystem = $(this).data('is-system');
+            var Url = "{:U('admin/config/update_status')}";
+            if(IsSystem == 1){
+                alert('系统字段不允许禁用');
+                return false;
+            }else{
+                $.post(Url, { id:Id }, function(data){
+                    if(data.status == 'ok'){
+                        location.reload();
+                    }else{
+                        alert(data.info);
+                    }
+                }, 'json').error(function(){
+                    alert('网络连接错误，请稍后重试');
+                });
+            }
+        });
+        
+        //修改操作
+        $(".js_edit").click(function(){
+            var Id = $(this).data('id');
+            var IsSystem = $(this).data('is-system');
+            var Url = "{:U('admin/config/edit')}?id="+Id;
+            if(IsSystem == 1){
+                alert('系统字段不允许修改');
+                return false;
+            }else{
+                window.location.href = Url;
+            }
+        });
+        //ajax排序
+        $(".js_sort").blur(function(){
+            var id = $(this).data('id');
+            var sort = $(this).val();
+            var url = "{:U('admin/config/update_sort')}";
+            $.post(url, { id:id, sort:sort }, function(data){
+                if(data.status == 'ok'){
+                    alert(data.info);
+                    location.reload();
+                }else{
+                    alert(data.info);
+                }
+            }, 'json').error(function(){
+                alert('网络连接错误，请稍后重试');
+            });
+        });
+        //删除操作
+        $(".js_del").click(function(){
+            var Id = $(this).data('id');
+            var IsSystem = $(this).data('is-system');
+            var Url = "{:U('admin/config/delete')}?id="+Id;
+            if(IsSystem == 1){
+                alert('系统字段不允许删除');
+                return false;
+            }else{
+                var result = confirm("删除是不可恢复的,你确认要删除吗?");
+                if(!result){
+                  return false;
+                }
+                $.post(Url, { id:Id }, function(data){
+                    if(data.status == 'ok'){
+                        location.reload();
+                    }else{
+                        alert(data.info);
+                    }
+                }, 'json').error(function(){
+                    alert('网络连接错误，请稍后重试');
+                });
+            }
+        });     
+    });
+</script>    
+{include file="Public/footer"/}

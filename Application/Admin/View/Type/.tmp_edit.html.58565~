@@ -1,0 +1,187 @@
+<include file="public/header" title="系统字段修改"/>
+<!-- Main content starts -->
+
+<div class="content">
+
+      <!-- Sidebar -->
+<include file="public/sidebar" />
+
+    <!-- Sidebar ends -->
+
+      <!-- Main bar -->
+      <div class="mainbar">
+      
+        <!-- Page heading -->
+        <div class="page-head">
+        <!-- Page heading -->
+          <h2 class="pull-left"><gt name="config_info.id" value="0">修改<else/>添加</else></gt>系统字段
+          <!-- page meta -->
+        </h2>
+
+
+        <!-- Breadcrumb -->
+        <div class="bread-crumb pull-right">
+          <a href="index.html"><i class="icon-home"></i> 主页</a> 
+          <!-- Divider -->
+          <span class="divider">/</span> 
+          <a href="#" class="bread-current"><gt name="config_info.id" value="0">修改<else/>添加</else></gt>系统字段</a>
+        </div>
+
+        <div class="clearfix"></div>
+
+        </div>
+        <!-- Page heading ends -->
+
+
+
+        <!-- Matter -->
+
+        <div class="matter">
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-md-12">
+
+              <div class="widget wgreen">
+                <div class="widget-head">
+                	<div class="pull-left"><gt name="config_info.id" value="0">修改<else/>添加</else></gt>系统字段</div>
+                  <div class="widget-icons pull-right">
+                    <a href="#" class="wminimize"><i class="icon-chevron-up"></i></a> 
+                    {//<a href="#" class="wclose"><i class="icon-remove"></i></a>}
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+
+                <div class="widget-content">
+                  <div class="padd">
+                    <!-- Form starts.  -->
+                     <form class="form-horizontal js_form" role="form" method="post" action="{:U('admin/config/save')}">
+                                <input type="hidden" name="config_id" value="{$config_info.id}" >
+                                <div class="form-group">
+                                  <label class="col-lg-2 control-label">字段标示符</label>
+                                  <div class="col-lg-5">
+                                    <input type="text" name="field" value="{$config_info.field}" class="form-control " placeholder="如:site_kefu" datatype="s6-20" errormsg="字段标示符不能少于6个字母">
+                                  </div>
+                                  <div class=" col-lg-5 Validform_checktip help-block">标示符必须以site_开头,并且是唯一的</div>
+                                </div> 
+								
+								<div class="form-group">
+                                  <label class="col-lg-2 control-label">字段标题</label>
+                                  <div class="col-lg-5">
+                                    <input type="text" name="title" value="{$config_info.title}" class="form-control " placeholder="如:网站客服" datatype="s2-5" errormsg="请输入2-5个汉字或字符">
+                                  </div>
+                                  <div class=" col-lg-5 Validform_checktip help-block">字段的显示标题</div>
+                                </div> 
+								
+                                <div class="form-group">
+                                  <label class="col-lg-2 control-label">字段备注</label>
+                                  <div class="col-lg-5">
+                                    <input type="text" name="mark" value="{$config_info.mark}" class="form-control " placeholder="" ignore="ignore" datatype="s1-30" errormsg="请输入1-30个字符">
+                                  </div>
+                                  <div class=" col-lg-5 Validform_checktip help-block">用于表单placeholder显示</div>
+                                </div>   
+					
+                                
+                                <div class="form-group">
+                                  <label class="col-lg-2 control-label">字段类型</label>
+								  
+								  <div class="col-lg-5">
+									<select class="form-control width-middle" name="field_type">
+									  <option value="string" selected>字符串(string)</option>
+									  <option value="text" <eq name="field_type" value="text">selected</eq>>文本(text)</option>
+									  <option value="bool" <eq name="field_type" value="bool">selected</eq>>布尔(bool)</option>
+									  <option value="editor" <eq name="field_type" value="editor">selected</eq>>富文本编辑器(editor)</option>
+									  <option value="url" <eq name="field_type" value="url">selected</eq>>网址(url)</option>
+									  <option value="phone" <eq name="field_type" value="phone">selected</eq>>手机号(phone)</option>
+									  <option value="email" <eq name="field_type" value="email">selected</eq>>邮箱(email)</option>
+									</select>
+                                  </div>
+                                </div>
+								
+								<div class="form-group">
+                                  <label class="col-lg-2 control-label">字段排序</label>
+                                  <div class="col-lg-5">
+                                    <input type="text" name="sort" value="{$config_info.sort|default='99'}" class="form-control width-middle" placeholder="" datatype="n1-3" errormsg="请输入1-3位数字">
+                                  </div>
+                                  <div class=" col-lg-2 Validform_checktip help-block">数字越大越靠后</div>
+                                </div>
+								
+								<div class="form-group">
+                                  <label class="col-lg-4 control-label">是否必填</label>
+                                  <div class="col-lg-8">
+                                  	<label class="radio-inline">
+									  <input type="radio" name="is_required" value="1" checked> 是
+									</label>
+									<label class="radio-inline">
+									  <input type="radio" name="is_required" value="0" <eq name="config_info.is_required" value="0">checked</eq>> 否
+									</label>
+                                  </div>
+                                </div>
+								
+                                <div class="form-group">
+                                  <label class="col-lg-4 control-label">字段状态</label>
+                                  <div class="col-lg-8">
+                                    <label class="radio-inline">
+                                      <input type="radio" name="status" value="1" checked> 正常
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="status" value="0" <eq name="config_info" value="0">checked</eq>> 禁用
+                                    </label>
+                                  </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                  <div class="col-lg-offset-1 col-lg-9">
+                                    <button type="submit" class="btn btn-primary">保存配置</button>
+                                  </div>
+                                </div>
+                              </form>
+                  </div>
+                </div>
+              </div>  
+            </div>
+
+          </div>
+
+        </div>
+          </div>
+
+        <!-- Matter ends -->
+
+    </div>
+
+   <!-- Mainbar ends -->            
+   <div class="clearfix"></div>
+
+</div>
+<!-- Content ends -->
+
+<script>
+    $(function(){
+        var demo=$(".js_form").Validform({
+            tiptype:function(msg,o,cssctl){
+            if(!o.obj.is("form")){
+              var objtip=o.obj.parent().siblings(".Validform_checktip");
+              cssctl(objtip,o.type);
+              objtip.text(msg);
+           }
+        },
+            label:"label",
+            datatype:{
+                "zh1-6":/^[\u4E00-\u9FA5\uf900-\ufa2d]{1,6}$/
+            },
+            ajaxPost:true,
+            callback:function(data){
+              if(data.status=="ok"){
+                  alert(data.info);
+                  window.location.href = "{:U('admin/config/index')}";
+              }else{
+                alert(data.info);
+              }
+            }
+        });
+
+    });
+</script>
+<include file="public/footer" />

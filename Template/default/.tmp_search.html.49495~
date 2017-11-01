@@ -1,0 +1,74 @@
+{include file="public/header" title="高级搜索"/}
+    
+    
+    <!-- start page -->
+    <div class="page">
+    
+    		
+            <div class="simplebox">
+            	<h1 class="titleh">高级搜索</h1>
+                <div class="content">
+                	
+                  <form name="form1" method="post" action="{:U('Home/Index/index')}">
+                  		
+                    <div class="form-line">
+                   	  <label class="st-label">商品名称</label>
+                      <input type="text" name="title"  style=" width:90%;" />
+                    </div>
+                  		
+                    <div class="form-line">
+                   	  <label class="st-label">零件号</label>
+                      <input type="text" name="PNO"  style=" width:90%;" />
+                    </div>
+					
+                    <div class="form-line">
+                   	  <label class="st-label">原厂参考零件号</label>
+                      <input type="text" name="old_PNO"  style=" width:90%;" />
+                    </div>
+                  		
+                    <div class="form-line">
+                      <label class="st-label">品牌</label>
+                      <select name="brand_id">
+                        <option value="0">请选择</option>
+						{$brand_list = get_list('brand')}
+                        {volist name="brand_list" id="vo"}
+                        <option value="{$vo.id}">{$vo.title}</option>
+                        {/volist}                   
+                      </select>
+                    </div>
+                  		
+                    <div class="form-line">
+                      <label class="st-label">类别</label>
+                      <select name="category_id">
+                        <option value="0">请选择</option>
+						{$category_list = get_list('category')}
+                        {volist name="category_list" id="vo"}
+                        <option value="{$vo.id}">{$vo.title}</option>
+						{/volist}
+                      </select>
+                    </div>
+                  		
+                    <div class="form-line">
+                   	  <label class="st-label">机型</label>
+                      <select name="type_id">
+                        <option value="0">请选择</option>
+						{$type_list = get_list('type')}
+                        {volist name="type_list" id="vo"}
+                        <option value="{$vo.id}">{$vo.title}</option>
+						{/volist}
+                      </select>
+                    </div>
+
+                    
+                    <div class="form-line">
+                    <input type="submit" name="button" id="button" value="&nbsp;搜索&nbsp;" class="submit-button" />
+                    <input type="reset" name="button" id="button2" value="&nbsp;清空&nbsp;" class="reset-button" />
+                    </div>
+
+                  </form>
+                  
+                </div>
+      </div>
+            
+            
+{include file="public/footer"/}

@@ -1,0 +1,99 @@
+{include file="public/header" title="商品列表"/}
+    
+    <div  id="container"  class="container-fluid">
+      <div  class="row-fluid">
+
+<!-- 左侧导航栏 start -->
+{include file="public/sidebar"/}
+<!-- 左侧导航栏 end -->
+
+<div  id="content"  class="span10">
+  <div  class="pageTit page-header">
+    <h1>产品管理 </h1>
+    <div  class="opt">
+      <a  class="btn btn-info"  href="{:U('admin/goods/add')}">添加产品</a>
+    </div>
+  </div>
+  
+    
+  <div class="search">
+    <form id="searchForm" class="well form-search" action="{:U('admin/goods/index')}" method="get">
+      <span>产品名称：
+        <input type="text" name="search[wx_nickname]" value="{$search['wx_nickname']}" placeholder="支持模糊查询" class="input-medium">
+      </span>
+      
+      <span>零件号：
+        <input type="text" name="search[title]" value="{$search['title']}" placeholder="支持模糊查询"  class="input-medium">
+      </span>
+	  
+	  <span>原厂参考零件号：
+        <input type="text" name="search[title]" value="{$search['title']}" placeholder="支持模糊查询"  class="input-medium">
+      </span>
+      
+      
+      <a href="javascript:void(0);" class="btn" id="search">搜索</a>
+      <a href="javascript:void(0);" class="btn" id="export">导出</a>
+      <a href="javascript:void(0);" class="btn" id="export">导入</a>
+    </form>
+  </div>
+  
+  <div  class="dataBox">
+    <table  class="table table-bordered table-striped center">
+      <thead>
+        <tr>
+          <th>产品ID</th>
+          <th>产品名称</th>
+          <th>零件号</th>
+          <th>原厂参考零件号</th>
+          <th>品牌</th>
+          <th>含税面价</th>
+          <th>适用机型</th>
+          <th>类别</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+          
+        {foreach name="goods_list" item="vo" }
+        <tr>
+          <td><a href="#">{$vo.id}</a></td>
+          <td>{$vo.title}</td>
+          <td>{$vo.PNO}</td>
+          <td>{$vo.old_PNO}</td>
+          <td>{:get_title('brand',$vo[brand_id])}</td>
+          <td>{$vo.price}</td>
+          <td>{$vo.type_ids}</td>
+          <td>{:get_title('category',$vo[category_id])}</td>
+          <td>
+            <a title="编辑" class=" btn btn-mini btn-info js_edit" href="{:U("admin/goods/edit?id=$vo[id]")}">编辑</a>
+            <a title="删除" class=" btn btn-mini btn-danger js_del" href="{:U("admin/goods/del?id=$vo[id]")}">删除</a>
+          </td>
+        </tr>
+        {/foreach}
+           
+        
+      </tbody>
+    </table>
+  </div>
+  
+<style>
+  .pages span{
+    border-color: #ddd;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    float: left;
+    line-height: 34px;
+    padding: 0 14px;
+    text-decoration: none;
+  }
+</style> 
+{include file="public/page"/}
+
+
+  
+</div>
+      </div>
+    </div>
+   
+{include file="public/footer"/}

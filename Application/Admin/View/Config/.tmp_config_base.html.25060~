@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://localhost/goods/index.php/admin/config/base -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>管理中心-系统字段列表</title>
+    
+    <link rel="stylesheet" href="./config_base_files/admin.css" type="text/css">
+    <link rel="stylesheet" href="./config_base_files/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="./config_base_files/bootstrap_fix.css" type="text/css">
+    <link rel="stylesheet" href="./config_base_files/jquery-ui.min.css" type="text/css">
+    
+    
+    <script type="text/javascript" src="./config_base_files/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="./config_base_files/Validform_v5.3.2_min.js"></script>
+    <script type="text/javascript" src="./config_base_files/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./config_base_files/jquery.cookie.js"></script>
+    <script type="text/javascript" src="./config_base_files/jquery.ui.datepicker-zh-CN.js"></script>
+	
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <style>
+    .row-fluid > .span2{ width:11%; }
+    .row-fluid > .span10{ width:86%; }
+    </style>
+
+    
+    <script type="text/javascript">
+      $(function(){
+        //记录上次菜单折叠状态
+        var clickMenu = $.cookie('sMenu');
+        if (clickMenu == null) {
+          clickMenu = 1;
+        }
+        $('.main-menu .main-menu-tit').each(function(i) {
+          if (i != clickMenu) {
+            $(this).next().css('display', 'none');
+          }
+          $(this).click(function() {
+            if ($(this).next().css('display') == 'none') {
+              $('.main-menu .main-menu-tit').next().slideUp('fast');
+              $(this).next().slideDown('fast');
+              $.cookie('sMenu', i, { expires: 3600 * 24 * 30, path: '/' });
+            } else {
+              $(this).next().slideUp('fast');
+            }
+          });
+        });
+      });
+    </script>
+
+    
+    
+  </head> 
+  
+  <body>
+  <div id="header" class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <div><a class="brand" href="http://localhost/goods/index.php/admin/index/index">微部落管理中心</a></div>
+          <div>
+            <ul class="nav pull-right">
+                <li id="navUserInfo">
+                  <a href="javascript:void(0);" style="color:white;">欢迎您，<i class="icon-user icon-white"></i>超级管理员&nbsp; </a>
+                </li>
+                <li class="divider-vertical" style="margin:0;"></li>
+                <li>
+                  <a href="http://localhost/goods/index.php/admin/index/index" style="color:white;">后台首页</a>
+                </li>
+                <li>
+                  <a href="http://localhost/goods/index.php/home/index/index" target="_blank" style="color:white;">网站首页</a>
+                </li>
+                <li class="dropdown">
+                  <a href="http://localhost/goods/index.php/admin/logout/index" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">退出</a>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 主容器 start -->
+    <div id="container" class="container-fluid">
+      <div class="row-fluid">
+
+<!-- 左侧导航栏 start -->
+<div id="sideBar" class="span2">
+  <ul class="nav nav-tabs nav-stacked" id="admin-menu-bar">
+  	
+      <li class="active main-menu">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-list-alt"></i> 产品管理</a>
+        <ul class="nav nav-list sub-menu" style="display: none;">
+          <li class=""> 
+            <a href="http://localhost/goods/index.php/admin/goods/index" class="noborder">产品列表</a>
+            <a href="http://localhost/goods/index.php/admin/goods/export" class="noborder">导出产品</a>
+            <a href="http://localhost/goods/index.php/admin/goods/import" class="noborder">导入产品</a>
+          </li> 
+        </ul>
+      </li>
+
+      <li class="active main-menu">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-th-large"></i> 品牌管理</a>
+        <ul class="nav nav-list sub-menu" style="display: none;">
+          <li class=""> 
+            <a href="http://localhost/goods/index.php/admin/brand/index" class="noborder">品牌列表</a>
+          </li> 
+        </ul>
+      </li>
+	  
+      <li class="active main-menu">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-tags"></i> 类别管理</a>
+        <ul class="nav nav-list sub-menu" style="display: none;">
+          <li class=""> 
+            <a href="http://localhost/goods/index.php/admin/category/index" class="noborder">类别列表</a>
+          </li> 
+        </ul>
+      </li>
+	  
+      <li class="active main-menu">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-random"></i> 机型管理</a>
+        <ul class="nav nav-list sub-menu" style="display: none;">
+          <li class=""> 
+            <a href="http://localhost/goods/index.php/admin/type/index" class="noborder">机型列表</a>
+          </li> 
+        </ul>
+      </li>	  
+	  
+      <li class="active main-menu ">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-lock"></i>安全管理</a>
+        <ul class="nav nav-list sub-menu" style="display: none;">
+          <li class=""> 
+            <a href="http://localhost/goods/index.php/admin/password/edit" class="noborder">修改用户名/密码</a>
+          </li> 
+        </ul>
+      </li>	
+	    	        
+      <li class="active main-menu ">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-cog"></i>系统设置</a>
+        <ul class="nav nav-list sub-menu">
+          <li class=""> 
+            <a href="./config_base_files/config_base.html" class="noborder">基本设置</a>
+            <a href="http://localhost/goods/index.php/admin/config/index" class="noborder">系统字段管理</a>
+          </li> 
+        </ul>
+      </li>
+	  
+      
+  </ul>
+</div>
+<!-- 左侧导航栏 end -->  
+<!-- 主内容 start -->
+<div id="content" class="span10">
+  <!-- 标题 start -->
+  <div class="pageTit page-header">
+    <h1>编辑<small>在这里编辑网站信息</small></h1>
+    <div class="opt">
+    </div>
+  </div>
+  <!-- 标题 end -->
+  <!-- 内容区块 start -->
+  <div class="formBox">
+      <form class="form-horizontal js_form" role="form" method="post" action="./config_base_files/config_base.html" enctype="multipart/form-data">
+        <!-- 标题 -->
+		<div class="control-group">
+          <label>网站名称：</label>
+<input type="text" name="site_name" value="微部落" class="form-control js_site_name" placeholder="" datatype="*2-50" errormsg="请输入2-50数字或字母" "="">		  
+          <span class="Validform_checktip"></span>
+        </div>
+        <hr><div class="control-group">
+          <label>网站风格：</label>
+<input type="text" name="site_style" value="default" class="form-control js_site_style" placeholder="" datatype="*2-50" errormsg="请输入2-50数字或字母" "="">		  
+          <span class="Validform_checktip"></span>
+        </div>
+        <hr><div class="control-group">
+          <label>站点关键字：(<font color="red">多个关键字请用逗号隔开</font>)</label>
+<input type="text" name="site_keywords" value="gocms,勾国磊" class="form-control js_site_keywords" placeholder="多个关键字请用逗号隔开" datatype="*2-50" errormsg="请输入2-50数字或字母" "="">		  
+          <span class="Validform_checktip"></span>
+        </div>
+        <hr><div class="control-group">
+          <label>站点描述：(<font color="red">站点描述</font>)</label>
+<input type="text" name="site_descript" value="哈哈哈哈" class="form-control js_site_descript" placeholder="站点描述" datatype="*2-50" errormsg="请输入2-50数字或字母" "="">		  
+          <span class="Validform_checktip"></span>
+        </div>
+        <hr><div class="control-group">
+          <label>版权信息：</label>
+<input type="text" name="site_copyright" value="Copyright ©2014-2016 GoCMS版权所有" class="form-control js_site_copyright" placeholder="" datatype="*2-50" errormsg="请输入2-50数字或字母" "="">		  
+          <span class="Validform_checktip"></span>
+        </div>
+        <hr><div class="control-group">
+          <label>网站logo：</label>
+<img id="js_logobox" src="./config_base_files/547d763b309ce.jpg" alt="点击更换LOGO" width="100px">
+                                    <input id="js_upload" name="site_logo" type="file" value="">		  
+          <span class="Validform_checktip"></span>
+        </div>
+        <hr> 
+
+        <div class="control-group">
+          <img style="display:none;" src="./config_base_files/loading.gif">
+          <input type="submit" class="btn btn-primary Sub" value="保存">
+        </div>
+    </form>
+  </div>
+  <!-- 内容区块 end -->
+</div>
+<!-- 主内容 end -->
+      </div>
+    </div>
+    <!-- 主容器 end -->
+	
+<script>
+    $(function(){
+        var demo=$(".js_form").Validform({
+            tiptype:function(msg,o,cssctl){
+            if(!o.obj.is("form")){
+              var objtip=o.obj.parent().siblings(".Validform_checktip");
+              cssctl(objtip,o.type);
+              objtip.text(msg);
+           }
+        },
+            label:"label",
+            //ajaxPost:true,
+            callback:function(data){
+              if(data.status=="ok"){
+                  alert(data.info);
+                  location.reload();
+              }else{
+                alert(data.info);
+              }
+            }
+        });
+        
+
+
+
+    });
+</script>	
+﻿    <!-- 脚部 start -->
+    <div id="footer">
+        Copyright ©2014-2016 GoCMS版权所有
+    </div>
+    <!-- 脚部 end -->
+  
+<div id="think_page_trace" style="position: fixed;bottom:0;right:0;font-size:14px;width:100%;z-index: 999999;color: #000;text-align:left;font-family:&#39;微软雅黑&#39;;">
+<div id="think_page_trace_tab" style="display: none;background:white;margin:0;height: 250px;">
+<div id="think_page_trace_tab_tit" style="height:30px;padding: 6px 12px 0;border-bottom:1px solid #ececec;border-top:1px solid #ececec;font-size:16px">
+	    <span style="color: rgb(0, 0, 0); padding-right: 12px; height: 30px; line-height: 30px; display: inline-block; margin-right: 3px; cursor: pointer; font-weight: 700;">基本</span>
+        <span style="color: rgb(153, 153, 153); padding-right: 12px; height: 30px; line-height: 30px; display: inline-block; margin-right: 3px; cursor: pointer; font-weight: 700;">文件</span>
+        <span style="color: rgb(153, 153, 153); padding-right: 12px; height: 30px; line-height: 30px; display: inline-block; margin-right: 3px; cursor: pointer; font-weight: 700;">流程</span>
+        <span style="color: rgb(153, 153, 153); padding-right: 12px; height: 30px; line-height: 30px; display: inline-block; margin-right: 3px; cursor: pointer; font-weight: 700;">错误</span>
+        <span style="color: rgb(153, 153, 153); padding-right: 12px; height: 30px; line-height: 30px; display: inline-block; margin-right: 3px; cursor: pointer; font-weight: 700;">SQL</span>
+        <span style="color: rgb(153, 153, 153); padding-right: 12px; height: 30px; line-height: 30px; display: inline-block; margin-right: 3px; cursor: pointer; font-weight: 700;">调试</span>
+    </div>
+<div id="think_page_trace_tab_cont" style="overflow:auto;height:212px;padding: 0; line-height: 24px">
+		    <div style="display: block;">
+    <ol style="padding: 0; margin:0">
+	<li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">请求信息 : 2014-12-28 23:08:57 HTTP/1.1 GET : /goods/index.php/admin/config/base</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">运行时间 : 0.1373s ( Load:0.0136s Init:0.0040s Exec:0.0665s Template:0.0532s )</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">吞吐率 : 7.28req/s</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">内存开销 : 1,788.22 kb</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">查询信息 : 3 queries 0 writes </li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">文件加载 : 21</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">缓存信息 : 0 gets 0 writes </li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">配置加载 : 125</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">会话信息 : SESSION_ID=p536sspka5k7v0bsa45e33pef1</li>    </ol>
+    </div>
+        <div style="display: none;">
+    <ol style="padding: 0; margin:0">
+	<li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">F:\wamp\www\goods\index.php ( 1.11 KB )</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">F:\wamp\www\goods\Include\ThinkPHP.php ( 4.54 KB )</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">F:\wamp\www\goods\Include\Library\Think\Think.class.php ( 11.97 KB )</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">F:\wamp\www\goods\Include\Library\Think\Storage.class.php ( 1.34 KB )</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">F:\wamp\www\goods\Include\Library\Think\Storage\Driver\File.class.php ( 3.42 KB )</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">F:\wamp\www\goods\Application\Runtime\common~runtime.php ( 75.03 KB )</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">F:\wamp\www\goods\Application\Admin\Conf\config.php ( 0.30 KB )</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">F:\wamp\www\goods\Application\Admin\Common\function.php ( 0.64 KB )</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">F:\wamp\www\goods\Include\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.51 KB )</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">F:\wamp\www\goods\Application\Admin\Controller\ConfigController.class.php ( 6.19 KB )</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">F:\wamp\www\goods\Application\Admin\Controller\AuthController.class.php ( 0.27 KB )</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">F:\wamp\www\goods\Include\Library\Think\Model.class.php ( 58.56 KB )</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">F:\wamp\www\goods\Include\Library\Think\Db.class.php ( 31.69 KB )</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">F:\wamp\www\goods\Include\Library\Think\Db\Driver\Mysql.class.php ( 10.47 KB )</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">F:\wamp\www\goods\Include\Library\Think\Template.class.php ( 27.73 KB )</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">F:\wamp\www\goods\Application\Common\LibTag\Go.class.php ( 1.55 KB )</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">F:\wamp\www\goods\Include\Library\Think\Template\TagLib.class.php ( 8.95 KB )</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">F:\wamp\www\goods\Include\Library\Think\Template\TagLib\Cx.class.php ( 21.87 KB )</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">F:\wamp\www\goods\Application\Runtime\Cache\Admin\283b58c7ad75112ebba6622b6dca740a.php ( 11.61 KB )</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">F:\wamp\www\goods\Include\Library\Behavior\WriteHtmlCacheBehavior.class.php ( 0.95 KB )</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">F:\wamp\www\goods\Include\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.13 KB )</li>    </ol>
+    </div>
+        <div style="display: none;">
+    <ol style="padding: 0; margin:0">
+	    </ol>
+    </div>
+        <div style="display: none;">
+    <ol style="padding: 0; margin:0">
+	<li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">[2048] Declaration of Admin\Controller\ConfigController::theme() should be compatible with Think\Controller::theme($theme) F:\wamp\www\goods\Application\Admin\Controller\ConfigController.class.php 第 17 行.</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">[8192] mysql_escape_string(): This function is deprecated; use mysql_real_escape_string() instead. F:\wamp\www\goods\Include\Library\Think\Db\Driver\Mysql.class.php 第 330 行.</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">[8] Use of undefined constant mark - assumed 'mark' F:\wamp\www\goods\Application\Runtime\Cache\Admin\283b58c7ad75112ebba6622b6dca740a.php 第 167 行.</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">[8] Use of undefined constant mark - assumed 'mark' F:\wamp\www\goods\Application\Runtime\Cache\Admin\283b58c7ad75112ebba6622b6dca740a.php 第 167 行.</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">[8] Use of undefined constant mark - assumed 'mark' F:\wamp\www\goods\Application\Runtime\Cache\Admin\283b58c7ad75112ebba6622b6dca740a.php 第 167 行.</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">[8] Use of undefined constant mark - assumed 'mark' F:\wamp\www\goods\Application\Runtime\Cache\Admin\283b58c7ad75112ebba6622b6dca740a.php 第 167 行.</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">[8] Use of undefined constant mark - assumed 'mark' F:\wamp\www\goods\Application\Runtime\Cache\Admin\283b58c7ad75112ebba6622b6dca740a.php 第 167 行.</li><li style="border-bottom:1px solid #EEE;font-size:14px;padding:0 12px">[8] Use of undefined constant mark - assumed 'mark' F:\wamp\www\goods\Application\Runtime\Cache\Admin\283b58c7ad75112ebba6622b6dca740a.php 第 167 行.</li>    </ol>
+    </div>
+        <div style="display: none;">
+    <ol style="padding: 0; margin:0">
+	    </ol>
+    </div>
+        <div style="display: none;">
+    <ol style="padding: 0; margin:0">
+	    </ol>
+    </div>
+    </div>
+</div>
+<div id="think_page_trace_close" style="display:none;text-align:right;height:15px;position:absolute;top:10px;right:12px;cursor: pointer;"><img style="vertical-align:top;" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAAMDA////wAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjAgNjEuMTM0Nzc3LCAyMDEwLzAyLzEyLTE3OjMyOjAwICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IFdpbmRvd3MiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MUQxMjc1MUJCQUJDMTFFMTk0OUVGRjc3QzU4RURFNkEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MUQxMjc1MUNCQUJDMTFFMTk0OUVGRjc3QzU4RURFNkEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxRDEyNzUxOUJBQkMxMUUxOTQ5RUZGNzdDNThFREU2QSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxRDEyNzUxQUJBQkMxMUUxOTQ5RUZGNzdDNThFREU2QSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgH//v38+/r5+Pf29fTz8vHw7+7t7Ovq6ejn5uXk4+Lh4N/e3dzb2tnY19bV1NPS0dDPzs3My8rJyMfGxcTDwsHAv769vLu6ubi3trW0s7KxsK+urayrqqmop6alpKOioaCfnp2cm5qZmJeWlZSTkpGQj46NjIuKiYiHhoWEg4KBgH9+fXx7enl4d3Z1dHNycXBvbm1sa2ppaGdmZWRjYmFgX15dXFtaWVhXVlVUU1JRUE9OTUxLSklIR0ZFRENCQUA/Pj08Ozo5ODc2NTQzMjEwLy4tLCsqKSgnJiUkIyIhIB8eHRwbGhkYFxYVFBMSERAPDg0MCwoJCAcGBQQDAgEAACH5BAAAAAAALAAAAAAPAA8AAAIdjI6JZqotoJPR1fnsgRR3C2jZl3Ai9aWZZooV+RQAOw=="></div>
+</div>
+<div id="think_page_trace_open" style="height:30px;float:right;text-align: right;overflow:hidden;position:fixed;bottom:0;right:0;color:#000;line-height:30px;cursor:pointer;"><div style="background:#232323;color:#FFF;padding:0 6px;float:right;line-height:30px;font-size:14px">0.1373s </div><img width="30" style="" title="ShowPageTrace" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjVERDVENkZGQjkyNDExRTE5REY3RDQ5RTQ2RTRDQUJCIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjVERDVENzAwQjkyNDExRTE5REY3RDQ5RTQ2RTRDQUJCIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NURENUQ2RkRCOTI0MTFFMTlERjdENDlFNDZFNENBQkIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NURENUQ2RkVCOTI0MTFFMTlERjdENDlFNDZFNENBQkIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5fx6IRAAAMCElEQVR42sxae3BU1Rk/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"></div>
+<script type="text/javascript">
+(function(){
+var tab_tit  = document.getElementById('think_page_trace_tab_tit').getElementsByTagName('span');
+var tab_cont = document.getElementById('think_page_trace_tab_cont').getElementsByTagName('div');
+var open     = document.getElementById('think_page_trace_open');
+var close    = document.getElementById('think_page_trace_close').childNodes[0];
+var trace    = document.getElementById('think_page_trace_tab');
+var cookie   = document.cookie.match(/thinkphp_show_page_trace=(\d\|\d)/);
+var history  = (cookie && typeof cookie[1] != 'undefined' && cookie[1].split('|')) || [0,0];
+open.onclick = function(){
+	trace.style.display = 'block';
+	this.style.display = 'none';
+	close.parentNode.style.display = 'block';
+	history[0] = 1;
+	document.cookie = 'thinkphp_show_page_trace='+history.join('|')
+}
+close.onclick = function(){
+	trace.style.display = 'none';
+this.parentNode.style.display = 'none';
+	open.style.display = 'block';
+	history[0] = 0;
+	document.cookie = 'thinkphp_show_page_trace='+history.join('|')
+}
+for(var i = 0; i < tab_tit.length; i++){
+	tab_tit[i].onclick = (function(i){
+		return function(){
+			for(var j = 0; j < tab_cont.length; j++){
+				tab_cont[j].style.display = 'none';
+				tab_tit[j].style.color = '#999';
+			}
+			tab_cont[i].style.display = 'block';
+			tab_tit[i].style.color = '#000';
+			history[1] = i;
+			document.cookie = 'thinkphp_show_page_trace='+history.join('|')
+		}
+	})(i)
+}
+parseInt(history[0]) && open.click();
+(tab_tit[history[1]] || tab_tit[0]).click();
+})();
+</script>
+</body></html>

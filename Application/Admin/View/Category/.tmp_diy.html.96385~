@@ -1,0 +1,218 @@
+<include file="public/header" title="添加系统字段"/>
+<!-- Main content starts -->
+
+<div class="content">
+
+      <!-- Sidebar -->
+<include file="public/sidebar" />
+
+    <!-- Sidebar ends -->
+
+      <!-- Main bar -->
+      <div class="mainbar">
+      
+        <!-- Page heading -->
+        <div class="page-head">
+        <!-- Page heading -->
+          <h2 class="pull-left">添加系统字段
+          <!-- page meta -->
+        </h2>
+
+
+        <!-- Breadcrumb -->
+        <div class="bread-crumb pull-right">
+          <a href="index.html"><i class="icon-home"></i> 主页</a> 
+          <!-- Divider -->
+          <span class="divider">/</span> 
+          <a href="#" class="bread-current">添加系统字段</a>
+        </div>
+
+        <div class="clearfix"></div>
+
+        </div>
+        <!-- Page heading ends -->
+
+
+
+        <!-- Matter -->
+
+        <div class="matter">
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-md-12">
+
+              <div class="widget wgreen">
+                
+                <div class="widget-head">
+                  <div class="pull-left">返回列表</div>
+                  <div class="widget-icons pull-right">
+                    <a href="#" class="wminimize"><i class="icon-chevron-up"></i></a> 
+                    {//<a href="#" class="wclose"><i class="icon-remove"></i></a>}
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+
+                <div class="widget-content">
+                  <div class="padd">
+                    <!-- Form starts.  -->
+                     <form class="form-horizontal" role="form" method="post" action="{:U('admin/config/diy')}">
+                              
+                                <div class="form-group">
+                                  <label class="col-lg-4 control-label">字段标示符</label>
+                                  <div class="col-lg-8">
+                                    <input type="text" name="email_title" value="{$config_info.field}" class="form-control width-middle" placeholder="Input Box">
+                                  </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                  <label class="col-lg-4 control-label">字段标题</label>
+                                  <div class="col-lg-8">
+                                    <input type="text" name="email_host" value="{$config_info.title}" class="form-control width-middle" placeholder="Input Box">
+                                  </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                  <label class="col-lg-4 control-label">字段备注</label>
+                                  <div class="col-lg-8">
+                                    <input type="text" name="email_name" value="{$config_info.mark}" class="form-control width-middle" >
+                                  </div>
+                                </div>  
+                                
+                                <div class="form-group">
+                                  <label class="col-lg-4 control-label">字段类型</label>
+								  
+								  <div class="col-lg-8">
+									<select class="form-control width-middle" name="type">
+									  <option value="string">字符串</option>
+									  <option value="text">文本</option>
+									  <option value="bool">布尔</option>
+									  <option value="editor">富文本编辑器</option>
+									  <option value="url">网址</option>
+									  <option value="phone">手机号</option>
+									  <option value="email">邮箱</option>
+									</select>
+                                  </div>
+                                </div>
+								
+								<div class="form-group">
+                                  <label class="col-lg-4 control-label">是否必填</label>
+                                  <div class="col-lg-8">
+                                  	<label class="radio-inline">
+									  <input type="radio" name="is_required" value="1"> 是
+									</label>
+									<label class="radio-inline">
+									  <input type="radio" name="is_required" value="0"> 否
+									</label>
+                                  </div>
+                                </div>
+								
+                                <div class="form-group">
+                                  <label class="col-lg-4 control-label">字段状态</label>
+                                  <div class="col-lg-8">
+                                    <label class="radio-inline">
+                                      <input type="radio" name="status" value="1"> 正常
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="status" value="0"> 禁用
+                                    </label>
+                                  </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                  <div class="col-lg-offset-1 col-lg-9">
+                                    <button type="submit" class="btn btn-primary">保存配置</button>
+                                  </div>
+                                </div>
+                              </form>
+                  </div>
+                </div>
+              </div>  
+            </div>
+
+          </div>
+
+        </div>
+          </div>
+
+        <!-- Matter ends -->
+
+    </div>
+
+   <!-- Mainbar ends -->            
+   <div class="clearfix"></div>
+
+</div>
+<!-- Content ends -->
+
+<!-- JS -->
+<script src="JS/jquery.js"></script> <!-- jQuery -->
+<script src="JS/Validform_v5.3.2_min.js"></script> <!-- jQuery -->
+<script src="JS/bootstrap.js"></script> <!-- Bootstrap -->
+<script src="JS/jquery-ui-1.9.2.custom.min.js"></script> <!-- jQuery UI -->
+<script src="JS/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<script src="JS/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<script src="JS/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+
+<!-- jQuery Flot -->
+<script src="JS/excanvas.min.js"></script>
+<script src="JS/jquery.flot.js"></script>
+<script src="JS/jquery.flot.resize.js"></script>
+<script src="JS/jquery.flot.pie.js"></script>
+<script src="JS/jquery.flot.stack.js"></script>
+
+<!-- jQuery Notification - Noty -->
+<script src="JS/jquery.noty.js"></script> <!-- jQuery Notify -->
+<script src="JS/layouts/bottom.js"></script> <!-- jQuery Notify -->
+<script src="JS/layouts/topRight.js"></script> <!-- jQuery Notify -->
+<script src="JS/layouts/top.js"></script> <!-- jQuery Notify -->
+<!-- jQuery Notification ends -->
+
+<script src="JS/sparklines.js"></script> <!-- Sparklines -->
+<script src="JS/bootstrap-datetimepicker.min.js"></script> <!-- Date picker -->
+<script src="JS/bootstrap-switch.min.js"></script> <!-- Bootstrap Toggle -->
+<script src="JS/filter.js"></script> <!-- Filter for support page -->
+<script src="JS/custom.js"></script> <!-- Custom codes -->
+<script src="JS/charts.js"></script> <!-- Charts & Graphs -->
+
+
+
+
+<script>
+    $(function(){
+        //$(".registerform").Validform();  //就这一行代码！;
+        var demo=$("#siteform").Validform({
+            tiptype:function(msg,o,cssctl){
+            if(!o.obj.is("form")){
+              var objtip=o.obj.siblings(".Validform_checktip");
+              cssctl(objtip,o.type);
+              objtip.text(msg);
+           }
+        },
+            label:"label",
+            datatype:{
+                "zh1-6":/^[\u4E00-\u9FA5\uf900-\ufa2d]{1,6}$/
+            },
+            ajaxPost:true,
+            callback:function(data){
+              if(data.status=="ok"){
+                  alert('保存成功');
+              }else{
+                alert('保存失败');
+              }
+            }
+        });
+
+        $(".js_status").change(function(){
+            var siteStatus = $("input[name='status']:checked").val();
+            if(siteStatus == 0){
+                $(".js_close_reason").removeClass("hidden").addClass("show");
+            }else{
+                $(".js_close_reason").removeClass("show").addClass("hidden");
+            }
+        });
+
+    });
+</script>
+<include file="public/footer" />

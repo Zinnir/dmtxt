@@ -1,0 +1,21 @@
+{include file="public/header" title="前台首页"/}
+    
+    <!-- start page -->
+    <div class="page">
+            <!-- start menu -->
+           	 <ul id="menu">
+                {volist name="brand_list" id="vo"}
+             	<li><a href="{:U("Home/brand/$vo[id]")}"><img src="{Go:global name="images_path"/}/icons/files.png" width="21" height="21" alt="icon" class="m-icon"/><b>{$vo.title}</b></a></li>
+                {/volist}
+			 </ul>
+            <!-- end menu -->
+            
+            
+            <!-- start top button -->
+            <div class="topbutton"><a href="#"><span>Top</span></a></div>
+            <!-- end top button -->
+            
+            
+            
+            <!-- start footer -->
+{include file="public/footer"/}

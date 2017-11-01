@@ -1,0 +1,30 @@
+{include file="public/header" title="产品详情"/}
+    
+    
+    <!-- start page -->
+    <div class="page">
+    
+    		
+            <div class="simplebox">
+            	<h1 class="titleh">产品详情</h1>
+                <div class="content">
+                		
+                        
+                	<!-- start statistics -->
+                    <ul class="statistics">
+                    	<li>教学单位	<p>	<span class="green">{$goods_info.title}</span></p>	</li>
+						<li>课程名称<p><span class="green">{$goods_info.price}</span></p> </li>
+                    	<li>工号<p>	<span class="green">{$goods_info.PNO}</span></p>	</li>
+                    	<li>教室姓名<p><span class="green">{$goods_info.old_PNO}</span></p>	</li>
+                    	<li>校区<p><span class="green">{:get_title('brand', $goods_info[brand_id])}</span></p>	</li>
+                    	<li>教学楼<p><span class="green">{:get_type_title($goods_info[id])}</span></p>	</li>
+                    	<li>教室<p><span class="green">{:get_title('category', $goods_info[category_id])}</span></p>	</li>
+                    </ul>
+                	<!-- end statistics -->
+                  
+                </div>
+      </div>
+       
+            
+            <!-- start footer -->
+{include file="public/footer"/}

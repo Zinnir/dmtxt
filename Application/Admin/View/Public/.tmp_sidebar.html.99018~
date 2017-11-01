@@ -1,0 +1,51 @@
+<div id="sideBar" class="span2">
+  <ul class="nav nav-tabs nav-stacked" id="admin-menu-bar">
+  	
+      <li class="active main-menu">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-gift"></i> 产品管理</a>
+        <ul class="nav nav-list sub-menu">
+          <li class=""> 
+            <a href="{:U('admin/goods/index')}" class="noborder">产品列表</a>
+            <a href="{:U('admin/goods/index')}" class="noborder">导入产品</a>
+          </li> 
+        </ul>
+      </li>
+
+      <li class="active main-menu">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-gift"></i> 品牌管理</a>
+        <ul class="nav nav-list sub-menu">
+          <li class=""> 
+            <a href="{:U('admin/brand/index')}" class="noborder">品牌列表</a>
+          </li> 
+        </ul>
+      </li>
+	  
+      <li class="active main-menu">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-gift"></i> 类别管理</a>
+        <ul class="nav nav-list sub-menu">
+          <li class=""> 
+            <a href="{:U('admin/category/index')}" class="noborder">类别列表</a>
+          </li> 
+        </ul>
+      </li>
+	  
+      <li class="active main-menu">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-gift"></i> 机型管理</a>
+        <ul class="nav nav-list sub-menu">
+          <li class=""> 
+            <a href="{:U('admin/type/index')}" class="noborder">机型列表</a>
+          </li> 
+        </ul>
+      </li>	  
+	  	        
+      <li class="active main-menu ">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-cog"></i>系统设置</a>
+        <ul class="nav nav-list sub-menu">
+          <li class=""> 
+            <a href="{:U('config/base')}" class="noborder">基本设置</a>
+          </li> 
+        </ul>
+      </li>
+      
+  </ul>
+</div>

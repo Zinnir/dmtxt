@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <!-- Title and other stuffs -->
+  <title>[title]--后台管理中心</title> 
+  <!-- Stylesheets -->
+  <link href="CSS/bootstrap.css" rel="stylesheet">
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="CSS/font-awesome.css"> 
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="CSS/jquery-ui.css"> 
+  <!-- prettyPhoto -->
+  <link rel="stylesheet" href="CSS/prettyPhoto.css">  
+  <!-- Star rating -->
+  <link rel="stylesheet" href="CSS/rateit.css">
+  <!-- Date picker -->
+  <link rel="stylesheet" href="CSS/bootstrap-datetimepicker.min.css">
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="CSS/bootstrap-switch.css">
+  <!-- Main stylesheet -->
+  <link href="CSS/style.css" rel="stylesheet">
+  <!-- Widgets stylesheet -->
+  <link href="CSS/widgets.css" rel="stylesheet">   
+  
+  <!-- HTML5 Support for IE -->
+  <!--[if lt IE 9]>
+  <script src="JS/html5shim.js"></script>
+  <![endif]-->
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="IMG/favicon/favicon.png">
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top bs-docs-nav" role="banner">
+  
+    <div class="conjtainer">
+      <!-- Menu button for smallar screens -->
+      <div class="navbar-header">
+		  <button class="navbar-toggle btn-navbar" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+			<span>菜单</span>
+		  </button>
+		  <!-- Site name for smallar screens -->
+		  <a href="index.html" class="navbar-brand hidden-lg">首页</a>
+		</div>
+      
+      
+
+      <!-- Navigation starts -->
+      <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">         
+
+        <ul class="nav navbar-nav">  
+
+          <!-- Upload to server link. Class "dropdown-big" creates big dropdown -->
+          <li class="navbar-logo">
+            <div class="logo"><span class="label label-success"><i class="icon-cloud-upload"></i></span>后台管理中心</div>
+            
+            
+          </li>
+
+        </ul>
+
+    
+        <!-- Links -->
+        <ul class="nav navbar-nav pull-right">
+          <li class="dropdown pull-right">            
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+              <i class="icon-user"></i> 管理员 <b class="caret"></b>              
+            </a>
+            
+            <!-- Dropdown menu -->
+            <ul class="dropdown-menu">
+              <li><a href="#"><i class="icon-user"></i> 个人资料</a></li>
+              <li><a href="#"><i class="icon-cogs"></i> 系统设置</a></li>
+              <li><a href="{:U('admin/logout/index')}"><i class="icon-off"></i> 退出登录</a></li>
+            </ul>
+          </li>
+          
+          <li class="dropdown pull-right">            
+            <a class="dropdown-toggle" href="{:U('Home/index/index')}" target="_blank">
+              <i class="icon-eye-open"></i> 前台首页     
+            </a>
+            
+          </li>
+          
+          <li class="dropdown pull-right">            
+            <a class="dropdown-toggle" href="{:U('Admin/index/index')}" target="_blank">
+              <i class="icon-home"></i> 后台首页             
+            </a>
+            
+            
+          </li>
+          
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+
+<!-- Header starts -->
+<header>
+    <div class="container">
+      
+    </div>
+  </header>  
+
+<!-- Header ends -->

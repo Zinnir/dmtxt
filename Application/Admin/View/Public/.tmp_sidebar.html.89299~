@@ -1,0 +1,120 @@
+<div id="sideBar" class="span2">
+  <ul class="nav nav-tabs nav-stacked" id="admin-menu-bar">
+    <li class="active main-menu">
+      <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-list-alt"></i> 帖子管理</a>
+      <ul class="nav nav-list sub-menu">
+        
+        <li class="">
+          <a href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=post/admin/index" class="noborder">帖子列表</a>
+        </li>
+        
+        <li class="">
+          <a href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=post/admin/add" class="noborder">发布帖子</a>
+        </li>
+        
+      </ul>
+    </li>
+    <li class="active main-menu">
+      <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-tag"></i> 标签管理</a>
+      <ul class="nav nav-list sub-menu">
+        <li class="">
+          <a href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=tag/admin/index" class="noborder">标签列表</a>
+        </li>
+        <li class="">
+          <a href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=tag/admin/add" class="noborder">添加标签</a>
+        </li>
+      </ul>
+    </li>
+    
+    <li class="active main-menu">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-comment"></i>评论管理</a>
+        <ul class="nav nav-list sub-menu">
+          <li class=""> 
+            <a href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=comment/admin/index" class="noborder">评论列表</a>
+          </li> 
+        </ul>
+      </li>
+
+      <li class="active main-menu">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-signal"></i>投票管理</a>
+        <ul class="nav nav-list sub-menu">
+          <li class="">
+            <a href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=vote/admin/index" class="noborder">投票列表</a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="active main-menu">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-gift"></i> 报名管理</a>
+        <ul class="nav nav-list sub-menu">
+          <li class=""> 
+            <a href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=apply/admin/index" class="noborder">报名列表</a>
+          </li> 
+
+        </ul>
+      </li>
+
+      
+      <li class="active main-menu">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-picture"></i>焦点图管理</a>
+        <ul class="nav nav-list sub-menu">
+          <li class=""> 
+            <a href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=focus/admin/index/" class="noborder">焦点图列表</a>
+          </li> 
+          <li class=""> 
+            <a href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=focus/admin/add" class="noborder">添加焦点图</a>
+          </li> 
+        </ul>
+      </li>
+      
+      <li class="active main-menu">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-user"></i>会员管理</a>
+        <ul class="nav nav-list sub-menu">
+          <li class=""> 
+            <a href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=user/admin/index" class="noborder">用户列表</a>
+          </li>
+        </ul>
+      </li>
+      
+      
+      
+      
+      <li class="active main-menu">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-user"></i>管理员中心</a>
+        <ul class="nav nav-list sub-menu">
+          <li class=""> 
+            <a href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=admin/my_password" class="noborder">修改账号/密码</a>
+          </li>
+          <li class=""> 
+            <a href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=admin/avatar" class="noborder">修改昵称/头像</a>
+          </li> 
+        </ul>
+      </li>
+      
+      <li class="active main-menu ">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-cog"></i>系统设置</a>
+        <ul class="nav nav-list sub-menu">
+          <li class=""> 
+            <a href="{:U('config/base')}" class="noborder">基本设置</a>
+            <a href="{:U('config/email')}" class="noborder">邮箱设置</a>
+            <a href="{:U('config/theme')}" class="noborder">模板设置</a>
+            <a href="{:U('config/url')}" class="noborder">伪静态设置</a>
+            <a href="{:U('config/index')}" class="noborder">系统字段管理</a>
+          </li> 
+        </ul>
+      </li>
+      
+      <li class="active main-menu ">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-trash"></i>回收站管理</a>
+        <ul class="nav nav-list sub-menu">
+          <li class=""> 
+            <a href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=recycle/admin/post" class="noborder">帖子回收站</a>
+          </li> 
+          <li class=""> 
+            <a href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=recycle/admin/comment" class="noborder">留言回收站</a>
+          </li>           
+        </ul>
+      </li>
+      
+  </ul>
+</div>

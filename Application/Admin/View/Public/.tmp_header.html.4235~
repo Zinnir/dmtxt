@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<!-- Title and other stuffs -->
+	<title>后台管理系统</title> 
+	<meta name="keywords" content="Bootstrap模版,Bootstrap模版下载,Bootstrap教程,Bootstrap中文,后台管理系统模版,后台模版下载,后台管理系统,后台管理模版" />
+	<meta name="description" content="代码家园-www.daimajiayuan.com提供Bootstrap模版,后台管理系统模版,后台管理界面,Bootstrap教程,Bootstrap中文翻译等相关Bootstrap插件下载" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="">
+	<!-- Stylesheets -->
+	<link href="CSS/bootstrap.css" rel="stylesheet">
+	<!-- Font awesome icon -->
+	<link rel="stylesheet" href="CSS/font-awesome.css"> 
+	<!-- jQuery UI -->
+	<link rel="stylesheet" href="CSS/jquery-ui.css"> 
+	<!-- Calendar -->
+	<link rel="stylesheet" href="CSS/fullcalendar.css">
+	<!-- prettyPhoto -->
+	<link rel="stylesheet" href="CSS/prettyPhoto.css">  
+	<!-- Star rating -->
+	<link rel="stylesheet" href="CSS/rateit.css">
+	<!-- Date picker -->
+	<link rel="stylesheet" href="CSS/bootstrap-datetimepicker.min.css">
+	<!-- CLEditor -->
+	<link rel="stylesheet" href="CSS/jquery.cleditor.css"> 
+	<!-- Bootstrap toggle -->
+	<link rel="stylesheet" href="CSS/bootstrap-switch.css">
+	<!-- Main stylesheet -->
+	<link href="CSS/style.css" rel="stylesheet">
+	<!-- Widgets stylesheet -->
+	<link href="CSS/widgets.css" rel="stylesheet">   
+	
+	<!-- HTML5 Support for IE -->
+	<!--[if lt IE 9]>
+	<script src="JS/html5shim.js"></script>
+	<![endif]-->
+	
+	<!-- JS -->
+	<script src="JS/jquery-1.8.3.min.js"></script> <!-- jQuery -->
+	<script src="JS/Validform_v5.3.2_min.js"></script> <!-- jQuery -->
+	<script src="JS/jquery.cookie.js"></script> <!-- jQuery -->
+	<script src="JS/bootstrap.js"></script> <!-- Bootstrap -->
+	<script src="JS/jquery-ui-1.9.2.custom.min.js"></script> <!-- jQuery UI -->
+	<script src="JS/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+	<script src="JS/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+	<script src="JS/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+	
+	<!-- jQuery Flot -->
+	<script src="JS/excanvas.min.js"></script>
+	<script src="JS/jquery.flot.js"></script>
+	<script src="JS/jquery.flot.resize.js"></script>
+	<script src="JS/jquery.flot.pie.js"></script>
+	<script src="JS/jquery.flot.stack.js"></script>
+	
+	<!-- jQuery Notification - Noty -->
+	<script src="JS/jquery.noty.js"></script> <!-- jQuery Notify -->
+	<script src="JS/layouts/bottom.js"></script> <!-- jQuery Notify -->
+	<script src="JS/layouts/topRight.js"></script> <!-- jQuery Notify -->
+	<script src="JS/layouts/top.js"></script> <!-- jQuery Notify -->
+	<!-- jQuery Notification ends -->
+	
+	<script src="JS/sparklines.js"></script> <!-- Sparklines -->
+	<script src="JS/jquery.cleditor.min.js"></script> <!-- CLEditor -->
+	<script src="JS/bootstrap-datetimepicker.min.js"></script> <!-- Date picker -->
+	<script src="JS/bootstrap-switch.min.js"></script> <!-- Bootstrap Toggle -->
+	<script src="JS/filter.js"></script> <!-- Filter for support page -->
+	<script src="JS/custom.js"></script> <!-- Custom codes -->
+	<script src="JS/charts.js"></script> <!-- Charts & Graphs -->
+	
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="images/favicon/favicon.png">
+	
+	<script type="text/javascript">
+      $(function(){
+        var clickMenu = $.cookie('sMenu');
+		//默认第一个菜单展开
+        if (clickMenu == null) {
+            clickMenu = 0;
+        }
+        $('.has_sub a').each(function(i) {
+			$(this).click(function() {
+			if ($(this).next().css('display') == 'none') {
+			  $.cookie('sMenu', i, { expires: 3600 * 24 * 30, path: '/' });
+			} 
+			});
+			if (i == clickMenu) {
+			$(this).addClass("subdrop");
+			$(this).next().css('display', 'block');
+			}		  
+        });
+      });
+    </script>
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top bs-docs-nav" role="banner">
+  
+    <div class="conjtainer">
+      <!-- Menu button for smallar screens -->
+      <div class="navbar-header">
+          <button class="navbar-toggle btn-navbar" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+            <span>菜单</span>
+          </button>
+          <!-- Site name for smallar screens -->
+          <a href="index.html" class="navbar-brand hidden-lg">首页</a>
+        </div>
+      
+      
+
+      <!-- Navigation starts -->
+      <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">         
+
+        <ul class="nav navbar-nav">  
+
+          <!-- Upload to server link. Class "dropdown-big" creates big dropdown -->
+          <li class="navbar-logo">
+            <div class="logo"><span class="label label-success"><i class="icon-cloud-upload"></i></span>后台管理中心</div>
+            
+            
+          </li>
+
+        </ul>
+
+    
+        <!-- Links -->
+        <ul class="nav navbar-nav pull-right">
+          <li class="dropdown pull-right">            
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+              <i class="icon-user"></i> 管理员 <b class="caret"></b>              
+            </a>
+            
+            <!-- Dropdown menu -->
+            <ul class="dropdown-menu">
+              <li><a href="#"><i class="icon-user"></i> 资料</a></li>
+              <li><a href="#"><i class="icon-cogs"></i> 设置</a></li>
+              <li><a href="{:U('admin/logout/index')}"><i class="icon-off"></i> 退出登录</a></li>
+            </ul>
+          </li>
+          
+          <li class="dropdown pull-right">            
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+              <i class="icon-home"></i> 前台首页     
+            </a>
+            
+          </li>
+          
+          <li class="dropdown pull-right">            
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+              <i class="icon-home"></i> 后台首页             
+            </a>
+            
+            
+          </li>
+          
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+
+<!-- Header starts -->
+<header>
+    <div class="container">
+      
+    </div>
+  </header>  
+
+<!-- Header ends -->

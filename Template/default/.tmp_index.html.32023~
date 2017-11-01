@@ -1,0 +1,5 @@
+<include file="public:header" title="11111" />
+
+<Go:global name="site_name"/>
+<Go:global name="site_copyright" />
+

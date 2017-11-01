@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="">
+<meta name="keywords" content="">
+<title>好听吧</title>
+
+<link rel="icon" href="/favicon.ico" mce_href="favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="favicon.ico" mce_href="/favicon.ico" type="image/x-icon">
+
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="JS/jquery.SuperSlide.js"></script>
+<script type="text/javascript" src="JS/popwin.js"></script>
+<script type="text/javascript" src="JS/scrolltopcontrol.js"></script>
+
+<!--[if lte IE 6]>
+<script src="js/DD_belatedPNG.js" type="text/javascript"></script>
+    <script type="text/javascript">
+       DD_belatedPNG.fix('div,span,li,b,input,a,a:hover');
+    </script>
+<![endif]--> 
+</head>
+
+<body>
+<div class="menu"> 
+<div class="nav"> 
+<div class="logo fl"></div>
+<ul>
+<li><a class="selected" href="index.html">首页</a></li>
+<li><a href="liebiao.html">有声美文</a></li>
+<li><a href="diantai_liebiao.html">有声电台</a></li>
+<li><a href="#">微痛电影</a><b></b></li>
+</ul>
+<div class="login fr hidden"><a id="login" href="#">登录</a><a id="reg" href="#">注册</a></div>  
+<div class="login fr ">
+<ul class="user-box">
+<li >天使街23号</li>
+<li ><img src="IMG/cog.png" width="16px" height="16px"/></li>
+</ul>
+</div>  
+ <div class="search fr">
+  <form method="get" name="yzloveform" action="#" onSubmit="return chku()">
+		<div class="sbox fl"><input name="k" type="text" onfocus="if (value =='文章.电台.找人'){value =''}" onblur="if (value ==''){value='文章.电台.找人'}"  value="文章.电台.找人" maxlength="60"></div>
+        <div class="sbtn fr"><input type="submit" value=""/></div>
+      <input type="hidden" name="t" value="1" />
+     </form>
+ 
+</div>
+<div class="fr"><a class="fr fabiao" href="#"></a></div>
+</div>
+</div>
+
+ <!-- 头部-->
+<div class="top">
+ <div class="spacing"></div>
+<div class="m-slide">
+			<ul class="img">
+				<li><a href="#" target="_blank"><img src="IMG/1.jpg" /></a></li>
+				<li><a href="#" target="_blank"><img src="IMG/2.jpg" /></a></li>
+				<li><a href="#" target="_blank"><img src="IMG/3.jpg" /></a></li>
+				<li><a href="#" target="_blank"><img src="IMG/4.jpg" /></a></li>
+                <li><a href="#" target="_blank"><img src="IMG/1.jpg" /></a></li>
+                <li><a href="#" target="_blank"><img src="IMG/1.jpg" /></a></li>
+                <li><a href="#" target="_blank"><img src="IMG/1.jpg" /></a></li>
+			</ul>
+			<ul class="tab">
+			 <li><a href="#"><b></b><span class="titlee"> 餐垫艺术 </span></a></li>
+				<li><a href="#"><b></b><span class="titlee"> 秋冬款连衣裙 </span></a></li>
+				<li><a href="#"><b></b><span class="titlee"> 秋冬围巾 </span></a></li>
+				<li><a href="#"><b></b><span class="titlee"> 帅气军工装 </span></a></li>
+                <li><a href="#"><b></b><span class="titlee"> 帅气军工装 </span></a></li>
+                <li><a href="#"><b></b><span class="titlee"> 帅气军工装帅气军工装帅气军工装帅气军工装军工装帅气军工装军工装帅气军工装 </span></a></li>
+                <li><a href="#"><b></b><span class="titlee"> 帅气军工装 </span></a></li> 
+			</ul>
+		
+	</div>
+   <script type="text/javascript">
+		jQuery(".m-slide").slide({ titCell:".tab li", mainCell:".img",effect:"fold", autoPlay:true});
+	</script>
+</div>
+ <!-- 头部end-->
+ <div class="main">
+  <div class="spacing"></div>
+ <!-- 左--> 
+  <div class="main_left fl">
+  
+   <div class="frame">
+ <div class="title">推荐美文</div>
+   <div id="switchLoad">
+ <div class="plists">
+ <div class="bd">
+   <ul>
+             <li class="pppp1"> 
+             <div class="ipm fr"><p>评论</p><b><a href="#" target="_blank">5555523</a></b></div> 
+              <div class="kuiz"> 
+              <div class="com-img fl"><a href="#" target="_blank"><img class="load" src="IMG/blank.png" _src="IMG/2013022610493413_jpg_190x190.jpg"/></a>
+              <span><a href="#" target="_blank"><img src="IMG/2013012603522774_jpg_50x50.jpg" /></a></span>
+             </div>
+            <div class="com-content">
+             <div class="com-writing">
+             <a href="#" target="_blank"><h3>【青鸟倾听】花落的声音 </h3></a>
+             曾经养过一盆茶花，就是这样触目惊心的死法。我大骇，从此怕茶花。怕它的极端与刚烈，还有那种自杀式的悲壮。不知那么温和淡定的茶树，怎会开出如此惨烈的花...... </div>
+            <div class="com-info"><p>某某任  发表于2月26日13</p></div>
+             </div>
+             </div>
+             </li>
+             
+              <li class="pppp1"> 
+              <div class="ipm fr"><p>评论</p><b><a href="#" target="_blank">23</a></b></div> 
+              <div class="kuiz"> 
+              <div class="com-img fl"><a href="#" target="_blank"><img class="load" src="IMG/blank.png" _src="IMG/2013022610493413_jpg_190x190.jpg"/></a>
+              <span><a href="#" target="_blank"><img src="IMG/2013012603522774_jpg_50x50.jpg" /></a></span>
+             </div>
+            <div class="com-content">
+             <div class="com-writing">
+             <a href="#" target="_blank"><h3>【青鸟倾听】花落的声音 </h3></a>
+             曾经养过一盆茶花，就是这样触目惊心的死法。我大骇，从此怕茶花。怕它的极端与刚烈，还有那种自杀式的悲壮。不知那么温和淡定的茶树，怎会开出如此惨烈的花...... </div>
+            <div class="com-info"><p>某某任  发表于2月26日13</p></div>
+             </div>
+             </div>
+             </li>
+             </ul>
+            </div>
+            </div>
+            <script type="text/javascript">jQuery("#switchLoad").slide({switchLoad:"_src"});</script>
+            </div>
+            </div>
+           
+    <div class="spacing"></div>         
+   <div class="frame">
+ <div class="title">推荐电影</div>
+  <div id="switchLoad1">
+ <div class="bd">
+ <dl class="radioBox">
+  <dd class="feih3 fl" onmouseover="this.className = 'feih3 fl hover'" onMouseOut="this.className = 'feih3 fl'"> 
+       <a class="iiii2" href="" title="点击收听怀旧金曲频道"><i><div class="i2"><img class="load" src="IMG/blank.png" _src="IMG/2013022812114328_jpg_100x100.jpg"/><b class="ii2"></b><u class="iii2"></u></div></i></a>
+       <a href="" class="popu ti3" title="怀旧金曲频道">怀旧金曲频道</a> 
+       <div class="songs tti3"> 
+        <span title="聆听范玮琪">聆听范玮琪聆听范玮琪聆听范玮琪</span> 
+         <span title="聆听范玮琪">收录高清MV ：8 首</span>
+        </div>
+      </dd>
+  
+    <dd class="feih3 fl" onmouseover="this.className = 'feih3 fl hover'" onMouseOut="this.className = 'feih3 fl'"> 
+      <a class="iiii2" href="" title="点击收听怀旧金曲频道"><i><div class="i2"><img class="load" src="IMG/blank.png" _src="IMG/2013022812114328_jpg_100x100.jpg"/><b class="ii2"></b><u class="iii2"></u></div></i></a>
+       <a href="" class="popu ti3" title="怀旧金曲频道">怀旧金曲频道</a> 
+       <div class="songs tti3"> 
+        <span title="聆听范玮琪">聆听范玮琪聆听范玮琪聆听范玮琪</span> 
+         <span title="聆听范玮琪">收录高清MV ：8 首</span>
+        </div>
+      </dd>
+  
+    <dd class="feih3 fl" onmouseover="this.className = 'feih3 fl hover'" onMouseOut="this.className = 'feih3 fl'"> 
+      <a class="iiii2" href="" title="点击收听怀旧金曲频道"><i><div class="i2"><img class="load" src="IMG/blank.png" _src="IMG/2013022812114328_jpg_100x100.jpg"/><b class="ii2"></b><u class="iii2"></u></div></i></a>
+       <a href="" class="popu ti3" title="怀旧金曲频道">怀旧金曲频道</a> 
+       <div class="songs tti3"> 
+        <span title="聆听范玮琪">聆听范玮琪聆听范玮琪聆听范玮琪琪聆听范玮琪</span> 
+         <span title="聆听范玮琪">收录高清MV ：8 首</span>
+        </div>
+      </dd>
+      
+        <dd class="feih3 fl" onmouseover="this.className = 'feih3 fl hover'" onMouseOut="this.className = 'feih3 fl'"> 
+      <a class="iiii2" href="" title="点击收听怀旧金曲频道"><i><div class="i2"><img class="load" src="IMG/blank.png" _src="IMG/2013022812114328_jpg_100x100.jpg"/><b class="ii2"></b><u class="iii2"></u></div></i></a>
+       <a href="" class="popu ti3" title="怀旧金曲频道">怀旧金曲频道</a> 
+       <div class="songs tti3"> 
+        <span title="聆听范玮琪">聆听范玮琪聆听范玮琪聆听范玮琪</span> 
+         <span title="聆听范玮琪">收录高清MV ：8 首</span>
+        </div>
+      </dd>
+  
+  </dl>
+         </div>
+            </div>
+             <script type="text/javascript">jQuery("#switchLoad1").slide({switchLoad:"_src"});</script>
+              <div class="clear"></div>    
+          </div>
+
+<div class="spacing"></div>
+   <div class="frame">
+ <div class="title">推荐电台</div>
+   <dl class="radioBox">
+   <dd class="feih fl" onmouseover="this.className = 'feih fl hover'" onMouseOut="this.className = 'feih fl'"> 
+   <a class="iiii1" href="" title="点击收听怀旧金曲频道"><i><div class="i1"><img src="IMG/2013022808314736_jpg_50x50.jpg"/><b class="ii1"></b><u class="iii1"></u></div></i></a>
+       <a href="" class="popu ti1" title="怀旧金曲频道">怀旧金曲频道</a> 
+      <a href="nj_36.html" class="more" title="进入主页">主页</a>
+        <div class="songs tti1"> 
+        <span title="聆听范玮琪"> 聆听范玮琪聆听范玮琪聆听范玮琪聆听范玮琪</span> 
+        </div>
+      </dd>
+      
+     <dd class="feih fl" onmouseover="this.className = 'feih fl hover'" onMouseOut="this.className = 'feih fl'"> 
+   <a class="iiii1" href="" title="点击收听怀旧金曲频道"><i><div class="i1"><img src="IMG/2013022808314736_jpg_50x50.jpg"/><b class="ii1"></b><u class="iii1"></u></div></i></a>
+       <a href="" class="popu ti1" title="怀旧金曲频道">怀旧金曲频道</a> 
+      <a href="nj_36.html" class="more" title="进入主页">主页</a>
+        <div class="songs tti1"> 
+        <span title="聆听范玮琪"> 聆听范玮琪聆听范玮琪聆听范玮琪聆听范玮琪</span> 
+        </div>
+      </dd>
+      
+     <dd class="feih fl" onmouseover="this.className = 'feih fl hover'" onMouseOut="this.className = 'feih fl'"> 
+   <a class="iiii1" href="" title="点击收听怀旧金曲频道"><i><div class="i1"><img src="IMG/2013022808314736_jpg_50x50.jpg"/><b class="ii1"></b><u class="iii1"></u></div></i></a>
+       <a href="" class="popu ti1" title="怀旧金曲频道">怀旧金曲频道</a> 
+      <a href="nj_36.html" class="more" title="进入主页">主页</a>
+        <div class="songs tti1"> 
+        <span title="聆听范玮琪"> 聆听范玮琪聆听范玮琪聆听范玮琪聆听范玮琪</span> 
+        </div>
+      </dd>
+      
+   <dd class="feih fl" onmouseover="this.className = 'feih fl hover'" onMouseOut="this.className = 'feih fl'"> 
+   <a class="iiii1" href="" title="点击收听怀旧金曲频道"><i><div class="i1"><img src="IMG/2013022808314736_jpg_50x50.jpg"/><b class="ii1"></b><u class="iii1"></u></div></i></a>
+       <a href="" class="popu ti1" title="怀旧金曲频道">怀旧金曲频道</a> 
+      <a href="nj_36.html" class="more" title="进入主页">主页</a>
+        <div class="songs tti1"> 
+        <span title="聆听范玮琪"> 聆听范玮琪聆听范玮琪聆听范玮琪聆听范玮琪</span> 
+        </div>
+      </dd>
+      
+   <dd class="feih fl" onmouseover="this.className = 'feih fl hover'" onMouseOut="this.className = 'feih fl'"> 
+   <a class="iiii1" href="" title="点击收听怀旧金曲频道"><i><div class="i1"><img src="IMG/2013022808314736_jpg_50x50.jpg"/><b class="ii1"></b><u class="iii1"></u></div></i></a>
+       <a href="" class="popu ti1" title="怀旧金曲频道">怀旧金曲频道</a> 
+      <a href="nj_36.html" class="more" title="进入主页">主页</a>
+        <div class="songs tti1"> 
+        <span title="聆听范玮琪"> 聆听范玮琪聆听范玮琪聆听范玮琪聆听范玮琪</span> 
+        </div>
+      </dd>
+      
+  <dd class="feih fl" onmouseover="this.className = 'feih fl hover'" onMouseOut="this.className = 'feih fl'"> 
+   <a class="iiii1" href="" title="点击收听怀旧金曲频道"><i><div class="i1"><img src="IMG/2013022808314736_jpg_50x50.jpg"/><b class="ii1"></b><u class="iii1"></u></div></i></a>
+       <a href="" class="popu ti1" title="怀旧金曲频道">怀旧金曲频道</a> 
+      <a href="nj_36.html" class="more" title="进入主页">主页</a>
+         <div class="songs tti1"> 
+        <span title="聆听范玮琪"> 聆听范玮琪聆听范玮琪聆听范玮琪聆听范玮琪</span> 
+        </div>
+      </dd>
+      
+    </dl>
+  <div class="clear"></div> 
+  </div>
+ 
+ </div> 
+  <!-- 左end--> 
+   <!-- 右--> 
+  <div class="main_right fr">
+ 
+  <div class="frame">
+ <div class="slideTxtBox">
+<div class="options">
+<ul><li>热门文章</li><li>热门电台</li><li>热门电影</li></ul>
+</div>
+<div class="bd">
+<ul>
+<dl class="radioBox">
+ <dd class="feih2" onmouseover="this.className = 'feih2 hover'" onMouseOut="this.className = 'feih2'"> 
+      <a class="iiii2" href="" title="点击收听怀旧金曲频道"><i><div class="i2"><img class="load" src="IMG/blank.png" _src="IMG/2013022812114328_jpg_100x100.jpg"/></div></i></a> 
+      <a href="" class="popu ti1" title="怀旧金曲频道">怀旧金曲频道</a> 
+       <div class="songs tti1"> 
+        <span>曾经养过一盆茶花，就是这样触目惊心的死法</span> 
+        <span><a href="#" target="_blank">(23条评论)</a></span>
+        </div>
+      </dd>
+      
+      <dd class="feih2" onmouseover="this.className = 'feih2 hover'" onMouseOut="this.className = 'feih2'"> 
+      <a class="iiii2" href="" title="点击收听怀旧金曲频道"><i><div class="i2"><img class="load" src="IMG/blank.png" _src="IMG/2013022812114328_jpg_100x100.jpg"/></div></i></a>
+       <a href="" class="popu ti1" title="怀旧金曲频道">怀旧金曲频道</a> 
+       <div class="songs tti1"> 
+        <span>曾经养过一盆茶花，就是这样触目惊心的死法</span> 
+        <span><a href="#" target="_blank">(23条评论)</a></span>
+        </div>
+      </dd>
+
+</dl>
+
+</ul>
+<ul>
+<dl class="radioBox">
+ <dd class="feih2" onmouseover="this.className = 'feih2 hover'" onMouseOut="this.className = 'feih2'"> 
+      <a class="iiii2" href="" title="点击收听怀旧金曲频道"><i><div class="i2"><img class="load" src="IMG/blank.png" _src="IMG/2013022812114328_jpg_100x100.jpg"/><b class="ii2"></b><u class="iii2"></u></div></i></a>
+       <a href="" class="popu ti1" title="怀旧金曲频道">怀旧金曲频道</a> 
+       <div class="songs tti1"> 
+        <span title="聆听范玮琪">聆听范玮琪聆听范玮琪聆听范玮琪</span> 
+         <span title="聆听范玮琪">收录高清MV ：8 首</span>
+        </div>
+      </dd>
+
+  <dd class="feih2" onmouseover="this.className = 'feih2 hover'" onMouseOut="this.className = 'feih2'"> 
+      <a class="iiii2" href="" title="点击收听怀旧金曲频道"><i><div class="i2"><img class="load" src="IMG/blank.png" _src="IMG/2013022812114328_jpg_100x100.jpg"/><b class="ii2"></b><u class="iii2"></u></div></i></a>
+       <a href="" class="popu ti1" title="怀旧金曲频道">怀旧金曲频道</a> 
+      
+        <div class="songs tti1"> 
+        <span title="聆听范玮琪"> 聆听范玮琪</span> 
+        <span title="聆听范玮琪">收录高清MV ：8 首</span>
+        </div>
+      </dd>
+</dl>
+</ul>
+<ul>
+<dl class="radioBox">
+ <dd class="feih2" onmouseover="this.className = 'feih2 hover'" onMouseOut="this.className = 'feih2'"> 
+      <a class="iiii2" href="" title="点击收听怀旧金曲频道"><i><div class="i2"><img class="load" src="IMG/blank.png" _src="IMG/2013022812114328_jpg_100x100.jpg"/><b class="ii2"></b><u class="iii2"></u></div></i></a>
+       <a href="" class="popu ti1" title="怀旧金曲频道">怀旧金曲频道</a> 
+      
+        <div class="songs tti1"> 
+        <span title="聆听范玮琪"> 聆听范玮琪</span> 
+        </div>
+      </dd>
+
+  <dd class="feih2" onmouseover="this.className = 'feih2 hover'" onMouseOut="this.className = 'feih2'"> 
+      <a class="iiii2" href="" title="点击收听怀旧金曲频道"><i><div class="i2"><img class="load" src="IMG/blank.png" _src="IMG/2013022812114328_jpg_100x100.jpg"/><b class="ii2"></b><u class="iii2"></u></div></i></a>
+       <a href="" class="popu ti1" title="怀旧金曲频道">怀旧金曲频道</a> 
+      
+        <div class="songs tti1"> 
+        <span title="聆听范玮琪"> 聆听范玮琪</span> 
+        </div>
+      </dd>
+</dl>
+</ul>
+</div>
+<script type="text/javascript">
+		jQuery(".slideTxtBox").slide({effect:"left",switchLoad:"_src"});
+		</script>
+        </div>
+</div>
+<div class="spacing"></div>
+<div class="frame">
+<div class="title"><span>更多>></span>本月TOP10评论用户榜</div>
+<ul class="jianju">
+<li class="umb"><span><p>(2199 条)</p><a href="#" title="【写给你的情书】岁岁长相见" target="_blank" >邹公子</a></span><b class="b1">01</b><a href="#" target="_blank"><img src="IMG/2013012603522774_jpg_50x50.jpg" /></a></li>
+<li class="umb"><span><p>(838 条)</p><a href="#" title="【写给你的情书】岁岁长相见" target="_blank" >邹公子</a></span><b class="b1">02</b><a href="#" target="_blank"><img src="IMG/2013012603522774_jpg_50x50.jpg" /></a></li>
+<li class="umb"><span><p>(838 条)</p><a href="#" title="【写给你的情书】岁岁长相见" target="_blank" >邹公子</a></span><b class="b1">03</b><a href="#" target="_blank"><img src="IMG/2013012603522774_jpg_50x50.jpg" /></a></li>
+<li><span class="fr">(838 条)</span><b class="b2">04</b><a href="#" title="【写给你的情书】岁岁长相见" target="_blank" >我是板蓝根。</a> </li>
+<li><span class="fr">(838 条)</span><b class="b2">05</b><a href="#" title="【写给你的情书】岁岁长相见" target="_blank" >我是板蓝根。</a> </li>
+<li><span class="fr">(838 条)</span><b class="b2">06</b><a href="http://yuyin.fm/?p=45209" title="我们忧伤的，不是没遇到那个人" target="_blank">我是板蓝根。</a> </li>
+
+</ul>
+</div>
+
+<div class="spacing"></div>
+<div class="frame">
+<div class="title"><span>更多>></span>近期评论</div>
+
+
+
+
+
+<div class="recent">
+<div class="avatar"><a href="#" target="_blank"><img src="IMG/2013012603522774_jpg_50x50.jpg" /></a></div>
+<div class="content_top"><div class="content_kp"></div></div>
+<div class="recent_content">
+<p><a href="#" target="_blank" >猫小姐。</a></p>
+我多想爱你爱过的人——自己。 亲爱的myself,接下来就让我来好我多想爱你爱过的人——自己。 亲爱的myself,接下来就让我来好好爱你吧。好爱你吧。
+</div>
+</div>
+
+<div class="recent">
+<div class="avatar"><a href="#" target="_blank"><img src="IMG/2013012603522774_jpg_50x50.jpg" /></a></div>
+<div class="content_top"><div class="content_kp"></div></div>
+<div class="recent_content">
+<p><a href="#" target="_blank" >猫小姐。</a></p>
+我多想爱你爱过的人——自己。 亲爱的myself,接下来就让我来好好爱你吧。
+</div>
+</div>
+
+</div>
+
+ </div>
+  
+  <!-- 右end--> 
+ <div class="clear"></div> 
+ <div class="spacing"></div>
+ </div>
+ 
+ <div class="bottom">
+<div class="bottom_c">
+<div class="footlink">
+<a href="#">关于好听吧</a> - <a href="#">人才招聘</a> - <a href="#">联系我们</a> - <a href="#">友情链接</a> - <a href="#">版权声明</a> - <a href="#">帮助中心</a> - <a href="#" target="_blank">官方博客</a>
+</div>  
+<div class="copy">Copyright © 2013 - 2013 haoting8.cn 请使用<a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" target="_blank">IE8.0</a>以上浏览器浏览会获得最佳性能<br/>
+								网络视听许可证0110413号 | 京网文[2011]0074-028号 | 京ICP证060716号 | 京ICP备11024134号-1 |京公网安备110105014900</div>
+ </div>
+ </div>
+<script>
+    $("#login ").click(function(){
+		popWin.showWin("600","500","用户登录","login.html");
+	});
+	$("#reg ").click(function(){
+		popWin.showWin("600","500","用户注册","register.html");
+	});
+</script>
+</body>
+</html>

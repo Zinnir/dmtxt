@@ -1,0 +1,3 @@
+<mynav limit="0,10" order="sort asc">
+   <a href="[field.id]">[field.name]</a><br/>
+</mynav>

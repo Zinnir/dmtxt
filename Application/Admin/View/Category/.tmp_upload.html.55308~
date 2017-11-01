@@ -1,0 +1,195 @@
+<include file="public/header" title="网站设置"/>
+<!-- Main content starts -->
+
+<div class="content">
+
+      <!-- Sidebar -->
+<include file="public/sidebar" />
+
+    <!-- Sidebar ends -->
+
+      <!-- Main bar -->
+      <div class="mainbar">
+      
+        <!-- Page heading -->
+        <div class="page-head">
+        <!-- Page heading -->
+          <h2 class="pull-left">网站设置
+          <!-- page meta -->
+        </h2>
+
+
+        <!-- Breadcrumb -->
+        <div class="bread-crumb pull-right">
+          <a href="index.html"><i class="icon-home"></i> 返回列表</a> 
+       
+        </div>
+
+        <div class="clearfix"></div>
+
+        </div>
+        <!-- Page heading ends -->
+
+
+
+        <!-- Matter -->
+
+        <div class="matter">
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-md-12">
+              <div class="widget wgreen">
+                
+                <div class="widget-head">
+                  <div class="pull-left">上传设置</div>
+                  <div class="widget-icons pull-right">
+                    <a href="#" class="wminimize"><i class="icon-chevron-up"></i></a> 
+                    {//<a href="#" class="wclose"><i class="icon-remove"></i></a>}
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+
+                <div class="widget-content">
+                  <div class="padd">
+                    <!-- Form starts.  -->
+                     <form class="form-horizontal js_form" role="form" method="post" action="{:U('admin/config/email')}">
+                              
+                                <div class="form-group">
+                                  <label class="col-lg-2 control-label">邮件显示名</label>
+                                  <div class="col-lg-5">
+                                    <input type="text" name="email_title" value="<Go:global name='email_title'/>" class="form-control " placeholder="如:GoCMS官方" datatype="*2-10" errormsg="请输入2-10个字符">
+                                  </div>
+                                  <div class=" col-lg-5 Validform_checktip help-block"></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                  <label class="col-lg-2 control-label">服务器地址</label>
+                                  <div class="col-lg-5">
+                                    <input type="text" name="email_host" value="<Go:global name='email_host'/>" class="form-control " placeholder="如:smtp.163.com" datatype="url" errormsg="请输入合法的SMTP服务器地址">
+                                  </div>
+                                  <div class=" col-lg-5 Validform_checktip help-block"></div>
+                                </div>    
+                                
+                                <div class="form-group">
+                                  <label class="col-lg-2 control-label">邮箱地址</label>
+                                  <div class="col-lg-5">
+                                    <input type="text" name="email_name" value="<Go:global name='email_name'/>" class="form-control " placeholder="如:gouguolei@163.com" datatype="e" errormsg="请输入合法的邮箱地址">
+                                  </div>
+                                  <div class=" col-lg-5 Validform_checktip help-block"></div>
+                                </div>        
+                                                                                    
+                                <div class="form-group">
+                                  <label class="col-lg-2 control-label">邮箱账号</label>
+                                  <div class="col-lg-5">
+                                    <input type="text" name="email_user" value="<Go:global name='email_user'/>" class="form-control " placeholder="如:gouguolei" datatype="*2-20" errormsg="请输入2-20个数字或字母">
+                                  </div>
+                                  <div class=" col-lg-5 Validform_checktip help-block"></div>
+                                </div>                                
+                                
+                                <div class="form-group">
+                                  <label class="col-lg-2 control-label">邮箱密码</label>
+                                  <div class="col-lg-5">
+                                    <input type="text" name="email_password" value="<Go:global name='email_password'/>" class="form-control " placeholder="" datatype="s5-20" errormsg="密码不能少于5个数字或字母">
+                                  </div>
+                                  <div class=" col-lg-5 Validform_checktip help-block"></div>
+                                </div>    
+                                                            
+                                <div class="form-group">
+                                  <label class="col-lg-2 control-label">测试内容</label>
+                                  <div class="col-lg-5">
+                                    <input type="text" value="这是测试邮件发送内容,请勿回复" class="form-control js_test_content">
+                                  </div>
+                                  <div class=" col-lg-5 Validform_checktip help-block">该测试内容会发送到基本设置里系统邮箱里，请确保填写了系统邮箱</div>
+                                </div>                           
+                                
+                                <div class="form-group">
+                                  <label class="col-lg-4 control-label"></label>
+                                  <div class="col-lg-8">
+                                    <button type="submit" class="btn btn-primary">保存配置</button>
+                                    <button type="button" class="btn btn-primary js_test">测试发送</button>
+                                  </div>
+                                </div>
+                                
+                                
+                              </form>
+                  </div>
+                </div>
+              </div>  
+            </div>
+
+          </div>
+
+        </div>
+          </div>
+
+        <!-- Matter ends -->
+
+    </div>
+
+   <!-- Mainbar ends -->            
+   <div class="clearfix"></div>
+
+</div>
+<!-- Content ends -->
+
+
+
+<script>
+    $(function(){
+        var demo=$(".js_form").Validform({
+            tiptype:function(msg,o,cssctl){
+            if(!o.obj.is("form")){
+              var objtip=o.obj.parent().siblings(".Validform_checktip");
+              cssctl(objtip,o.type);
+              objtip.text(msg);
+           }
+        },
+            label:"label",
+            datatype:{
+                "zh1-6":/^[\u4E00-\u9FA5\uf900-\ufa2d]{1,6}$/
+            },
+            ajaxPost:true,
+            callback:function(data){
+              if(data.status=="ok"){
+                  alert(data.info);
+                  location.reload();
+              }else{
+                alert(data.info);
+              }
+            }
+        });
+        
+        //测试发送
+        $(".js_test").click(function(){
+            var url = "{:U('admin/config/test_email')}";
+            var content = $(".js_test_content").val();
+            if(content == ''){
+                alert('测试内容不能为空');
+                $(".js_test_content").focus();
+                return false;
+            }
+            $.post(url , { content:content }, function($data){
+                if($data.status == 'ok'){
+                    alert('测试内容发送成功');
+                }else{
+                    alert(data.info);
+                }
+            }, 'json').error(function(){
+                alert('网络错误，请稍后再试');
+            });
+        });
+
+        $(".js_status").change(function(){
+            var siteStatus = $("input[name='status']:checked").val();
+            if(siteStatus == 0){
+                $(".js_close_reason").removeClass("hidden").addClass("show");
+            }else{
+                $(".js_close_reason").removeClass("show").addClass("hidden");
+            }
+        });
+
+    });
+</script>
+<include file="public/footer" />

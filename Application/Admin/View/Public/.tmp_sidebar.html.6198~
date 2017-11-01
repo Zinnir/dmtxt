@@ -1,0 +1,38 @@
+    <div class="sidebar">
+        <div class="sidebar-dropdown"><a href="#">导航</a></div>
+
+        <!--- Sidebar navigation -->
+        <!-- If the main navigation has sub navigation, then add the class "has_sub" to "li" of main navigation. -->
+        <ul id="nav">
+          <li class="has_sub"><a href="#"><i class="icon-list-alt"></i> 系统设置  <span class="pull-right"><i class="icon-chevron-right"></i></span></a>
+            <ul>
+              <li {eq name="Think.ACTION_NAME" value="base"}class="active"{/eq} ><a href="{:U('config/base')}">站点设置</a></li>
+              <li {eq name="Think.ACTION_NAME" value="email"}class="active"{/eq} ><a href="{:U('config/email')}">邮箱设置</a></li>
+              <li {eq name="Think.ACTION_NAME" value="theme"}class="active"{/eq} ><a href="{:U('config/theme')}">模板设置</a></li>
+			  <li {eq name="Think.ACTION_NAME" value="url"}class="active"{/eq} ><a href="{:U('config/url')}">伪静态设置</a></li>
+			  <li {eq name="Think.ACTION_NAME" value="url"}class="active"{/eq} ><a href="{:U('config/url')}">上传设置</a></li>
+              <li {eq name="Think.ACTION_NAME" value="index"}class="active"{/eq} ><a href="{:U('config/index')}">系统字段管理</a></li>
+            </ul>
+          </li>  
+          <li class="has_sub"><a href="#"><i class="icon-file-alt"></i> 内容管理<span class="pull-right"><i class="icon-chevron-right"></i></span></a>
+            <ul>
+              <li><a href="post.html">栏目管理</a></li>
+              <li><a href="login.html">内容管理</a></li>
+              <li><a href="widgets3.html">推荐位管理</a></li>
+              <li><a href="widgets3.html">标签管理</a></li>
+              <li><a href="register.html">来源管理</a></li>
+            </ul>
+          </li> 
+          <li class="has_sub"><a href="#"><i class="icon-file-alt"></i> 权限管理  <span class="pull-right"><i class="icon-chevron-right"></i></span></a>
+            <ul>
+              <li><a href="media.html">媒体</a></li>
+              <li><a href="statement.html">描述</a></li>
+              <li><a href="error.html">错误</a></li>
+              <li><a href="error-log.html">错误日志</a></li>
+              <li><a href="calendar.html">日历</a></li>
+              <li><a href="grid.html">网格</a></li>
+            </ul>
+          </li>                             
+  
+        </ul>
+    </div>

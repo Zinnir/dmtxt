@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>[title]-{Go:global name="site_name"/}</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="keywords" content="{Go:global name="site_keywords"/}" />
+<meta name="description" content="{Go:global name="site_descript"/}" />
+<link rel="stylesheet" type="text/css" href="{Go:global name="css_path"/}/reset.css" /> 
+<link rel="stylesheet" type="text/css" href="{Go:global name="css_path"/}/root.css" /> 
+<script type="text/javascript" src="{Go:global name="js_path"/}/jquery.min.js"></script>
+<script type="text/javascript" src="{Go:global name="js_path"/}/toogle.js"></script>	
+</head>
+<body>
+   
+    <!-- start header -->
+        <div id="header">
+         <a href="#"><img src="{Go:global name="images_path"/}/logo.png" width="120" height="40" alt="logo" class="logo" /></a>
+            
+			<a href="javascript:void(0);" onclick="history.back();" class="button back"><img src="{Go:global name="images_path"/}/back-button.png" width="15" height="16" alt="icon" /></a>
+            <a href="#" class="button search"><img src="{Go:global name="images_path"/}/search.png" width="16" height="16" alt="icon"/></a>
+            <a href="{:U('index/index')}" class="button create"><img src="{Go:global name="images_path"/}/create.png" width="16" height="16" alt="icon"/></a>
+        <div class="clear"></div>
+</div>
+    <!-- end header -->
+    
+    <!-- start searchbox -->
+    <div class="searchbox">
+   	  <form id="searchForm" method="post" action="{:U('Home/Index/index')}">
+      	<input type="text" name="search" id="textfield" class="txtbox" placeholder="输入名称，零件号等关键字" value="{$search}"/>
+		<input type="submit" value="搜索" />
+   	  </form>
+    </div>
+    <!-- end searchbox -->
+    
+  

@@ -1,0 +1,149 @@
+{include file="Public/header" title="商品列表"/}
+    
+    <div  id="container"  class="container-fluid">
+      <div  class="row-fluid">
+
+<!-- 左侧导航栏 start -->
+{include file="Public/sidebar"/}
+<!-- 左侧导航栏 end -->
+
+<div  id="content"  class="span10">
+  <div  class="pageTit page-header">
+    <h1>产品管理 </h1>
+    <div  class="opt">
+      <a  class="btn btn-info"  href="{:U('admin/goods/add')}">添加产品</a>
+    </div>
+  </div>
+  
+    
+  <div class="search">
+    <form id="searchForm" name="searchform" class="well form-search" action="" method="post"  onSubmit="check();">
+      <span>产品名称：
+        <input type="text" name="search[title]" value="{$search['title']}" placeholder="支持模糊查询" class="input-medium">
+      </span>
+      
+      <span>零件号：
+        <input type="text" name="search[PNO]" value="{$search['PNO']}" placeholder="支持模糊查询"  class="input-medium">
+      </span>
+	  
+	  <span>原厂参考零件号：
+        <input type="text" name="search[old_PNO]" value="{$search['old_PNO']}" placeholder="支持模糊查询"  class="input-medium">
+      </span>
+	  
+      <span>品牌：
+      <select style="width:90px" name="search[brand_id]">
+          <option value ='0' selected>全部</option>
+		  {$brand_list = get_list('brand')}
+          {volist name="brand_list" id="vo"}
+          <option value="{$vo.id}" {if condition="$vo[id] eq $search[brand_id]"}selected{/if}>{$vo.title}</option>
+          {/volist} 
+      </select>
+      </span>	  
+      
+      <input type="submit"  class="btn"  value="搜索" onclick="checkaction(1);"/>
+      <input type="submit"  class="btn"  value="导出" onclick="checkaction(0);"/>
+	  
+      <a href="{:U('admin/goods/import')}" target="_blank"  class="btn">导入</a>
+      
+    </form>
+  </div>
+  
+  <div  class="dataBox">
+    <table  class="table table-bordered table-striped center">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>教学单位</th>
+          <th>1-2</th>
+          <th>工号</th>
+          <th>教师姓名</th>
+          <th>教室</th>
+          <th>星期</th>
+          <th>节次</th>
+          
+          <th>添加时间</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        {if condition="$wp_list"}  
+        {foreach name="wp_list" item="vo" }
+        <tr>
+          <td><a href="#">{$vo.id}</a></td>
+          <td>{$vo.danwei}</td>
+          <td>{$vo.PNO}</td>
+          <td>{$vo.old_PNO}</td>
+          <td>{$vo.jsname}</td>
+          <td>{$vo.jiaoshi}</td>
+          <td>{$vo.type_ids}</td>
+          <td>{$vo.jieci}</td>
+         
+          <td>{$vo.add_time}</td>
+          <td>
+            <a title="编辑" class=" btn btn-mini btn-info js_edit" href="{:U("admin/goods/edit?id=$vo[id]")}">编辑</a>
+            <a title="删除" class=" btn btn-mini btn-danger js_del" href="{:U("admin/goods/del?id=$vo[id]")}">删除</a>
+          </td>
+        </tr>
+        {/foreach}
+		{else/}
+		<tr><td colspan="13">暂无相关信息</td></tr>
+        {/if}
+        
+      </tbody>
+    </table>
+  </div>
+  
+<style>
+  .pages span{
+    border-color: #ddd;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    float: left;
+    line-height: 34px;
+    padding: 0 14px;
+    text-decoration: none;
+  }
+  
+    .pages .current{
+    background-color: #F7F7F7;
+  }
+</style> 
+{include file="Public/page"/}
+
+
+  
+</div>
+      </div>
+    </div>
+	
+ <script>
+function checkaction(v){ 
+	if(v==0){ 
+	document.searchform.action="{:U('admin/goods/export')}"; 
+	}else{ 
+	document.searchform.action="{:U('admin/goods/index')}"; 
+	} 
+	searchform.submit(); 
+} 
+
+$(function(){
+    //搜索订单
+    $("#search").click(function(){
+        $("#anu").val('apply/admin');
+        $("#searchForm").submit();
+    });
+    //导出订单
+    $("#export").click(function(){
+        $("#anu").val('apply/admin/export');
+        $("#searchForm").submit();
+    });
+  $('.btn-danger').click(function(){
+    var result = confirm("删除是不可恢复的,你确认要删除吗?");
+    if(!result){
+      return false;
+    }
+  });
+});
+</script>  
+{include file="Public/footer"/}

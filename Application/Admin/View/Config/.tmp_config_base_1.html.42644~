@@ -1,0 +1,181 @@
+{include file="public/header" title="网站设置"/}
+<style>
+	input#js_upload1 {
+margin-top: -50px;
+}
+</style>
+<script src="JS/uploadify/uploadify.css"></script>
+<script src="JS/uploadify/jquery.uploadify.min.js"></script>
+ <script type="text/javascript">
+ //上传插件
+$(function() {
+    $('#js_upload').uploadify({
+        'swf'      : 'JS/uploadify/uploadify.swf',
+        'uploader' : '{:U("Admin/Upload/index")}',
+        'buttonText' : 'LOGO上传',
+		'fileTypeDesc':'不超过2M的图片 (*.gif;*.jpg;*.png)',
+        'onUploadSuccess' : function(file, data, response) {
+            $('#js_logobox').attr('src','__ROOT__/Uploads/'+ data);
+            $('.js_site_logo').val(data);
+        },
+    });
+ });
+ </script>
+
+<!-- Main content starts -->
+
+<div class="content">
+
+      <!-- Sidebar -->
+{include file="public/sidebar" /}
+
+    <!-- Sidebar ends -->
+
+      <!-- Main bar -->
+      <div class="mainbar">
+      
+        <!-- Page heading -->
+        <div class="page-head">
+        <!-- Page heading -->
+          <h2 class="pull-left">系统设置
+          <!-- page meta -->
+        </h2>
+
+
+        <!-- Breadcrumb -->
+        <div class="bread-crumb pull-right">
+          <a href="index.html"><i class="icon-home"></i> 返回列表</a> 
+       
+        </div>
+
+        <div class="clearfix"></div>
+
+        </div>
+        <!-- Page heading ends -->
+
+
+
+        <!-- Matter -->
+
+        <div class="matter">
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-md-12">
+              <div class="widget wgreen">
+                
+                <div class="widget-content">
+                  <div class="padd">
+                    <!-- Form starts.  -->
+                     <form class="form-horizontal js_form" role="form" method="post" action="{:U('admin/config/base')}" enctype="multipart/form-data">
+                                {foreach name="config_list" item="vo" }
+                                <div class="form-group">
+                                  <label class="col-md-5 control-label">{$vo.title}</label>
+                                  <div class="col-md-5">
+                                      
+                                    {switch name="vo.field_type"}
+                                    {case value="shortstring"}
+                                    <input type="text" name="{$vo.field}" value="{$vo.value}" class="form-control js_{$vo.field}" placeholder="{$vo.mark}" datatype="*2-20" <if condition="$vo.is_required eq 0">ignore="ignore"</if> errormsg="请输入2-20数字或字母">
+                                    {/case}
+                                    
+                                    {case value="string"}
+                                    <input type="text" name="{$vo.field}" value="{$vo.value}" class="form-control js_{$vo.field}" placeholder="{$vo.mark}" datatype="*2-50" {if condition="$vo.is_required eq 0"}ignore="ignore"{/if} errormsg="请输入2-50数字或字母"">
+                                    {/case}
+                                    
+                                    {case value="text"}
+                                    <input type="text" name="{$vo.field}" value="{$vo.value}" class="form-control js_{$vo.field}" placeholder="{$vo.mark}" datatype="*2-50" {if condition="$vo.is_required eq 0"}ignore="ignore"{/if} errormsg="请输入2-50数字或字母"">
+                                    {/case}
+									
+                                    {case value="bool"}
+                                    <input type="radio" name="{$vo.field}" value="1" class="js_{$vo.field}">是
+                                    <input type="radio" name="{$vo.field}" value="0" class="js_{$vo.field}">否
+                                    {/case}
+									                                    
+                                    {case value="url"}
+                                    <input type="text" name="{$vo.field}" value="{$vo.value}" class="form-control js_{$vo.field}" placeholder="{$vo.mark}" datatype="url" {if condition="$vo.is_required eq 0"}ignore="ignore"{/if} errormsg="请输入合法网址">
+                                    {/case}
+                                    
+                                    {case value="phone"}
+                                    <input type="text" name="{$vo.field}" value="{$vo.value}" class="form-control js_{$vo.field}" placeholder="{$vo.mark}" datatype="m" {if condition="$vo.is_required eq 0"}ignore="ignore"{/if} errormsg="请输入合法手机号">
+                                    {/case}
+                                    
+                                    {case value="email"}
+                                    <input type="text" name="{$vo.field}" value="{$vo.value}" class="form-control js_{$vo.field}" placeholder="{$vo.mark}" datatype="e" {if condition="$vo.is_required eq 0"}ignore="ignore"{/if} errormsg="请输入合法邮箱地址">
+                                    {/case}
+									
+									{case value="pic"}
+                                    <img id="js_logobox" src="__ROOT__/Uploads/{$vo.value}" alt="点击更换LOGO" width="100px">
+									<input id="js_upload" type="file" value="2222"/>
+									<input type="hidden" name="{$vo.field}" value="{$vo.value}" class="form-control js_{$vo.field}" placeholder="{$vo.mark}" datatype="*1-250" {if condition="$vo.is_required eq 0"}ignore="ignore"{/if} errormsg="请上传网站logo">
+                                    {/case}
+                                    
+                                    {default /}
+                                    <input type="text" name="{$vo.field}" value="{$vo.value}" class="form-control col-sm-6 js_{$vo.field}" placeholder="{$vo.mark}" datatype="*2-20" {if condition="$vo.is_required eq 0"}ignore="ignore"{/if} errormsg="请输入2-20数字或字母">
+                                    {/switch}
+                                    
+                                  </div>
+                                  <div class="col-md-2 Validform_checktip help-block"></div>
+                                </div>
+                             
+                                {/foreach} 
+                                
+                                <div class="form-group">
+                                  <label class="col-lg-4 control-label"></label>
+                                  <div class="col-lg-8">
+                                    <button type="submit" class="btn btn-primary">保存配置</button>
+                                  </div>
+                                </div>
+                    </form>
+                  </div>
+                </div>
+              </div>  
+
+  
+            </div>
+
+          </div>
+
+        </div>
+          </div>
+
+        <!-- Matter ends -->
+
+    </div>
+
+   <!-- Mainbar ends -->            
+   <div class="clearfix"></div>
+
+</div>
+<!-- Content ends -->
+
+
+
+<script>
+    $(function(){
+        var demo=$(".js_form").Validform({
+            tiptype:function(msg,o,cssctl){
+            if(!o.obj.is("form")){
+              var objtip=o.obj.parent().siblings(".Validform_checktip");
+              cssctl(objtip,o.type);
+              objtip.text(msg);
+           }
+        },
+            label:"label",
+            ajaxPost:true,
+            callback:function(data){
+              if(data.status=="ok"){
+                  alert(data.info);
+                  location.reload();
+              }else{
+                alert(data.info);
+              }
+            }
+        });
+        
+
+
+
+    });
+</script>
+{include file="public/footer" /}

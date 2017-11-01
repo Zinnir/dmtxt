@@ -1,0 +1,108 @@
+{include file="Public/header" title="系统字段列表"/}
+    <!-- 主容器 start -->
+    <div id="container" class="container-fluid">
+      <div class="row-fluid">
+
+<!-- 左侧导航栏 start -->
+{include file="Public/sidebar"/}
+<!-- 左侧导航栏 end -->  
+<!-- 主内容 start -->
+<div id="content" class="span10">
+  <!-- 标题 start -->
+  <div class="pageTit page-header">
+    <h1>编辑<small>在这里编辑网站信息</small></h1>
+    <div class="opt">
+    </div>
+  </div>
+  <!-- 标题 end -->
+  <!-- 内容区块 start -->
+  <div class="formBox">
+      <form class="form-horizontal js_form" role="form" method="post" action="{:U('admin/config/base')}" enctype="multipart/form-data">
+        <!-- 标题 -->
+		{foreach name="config_list" item="vo" }
+        <div class="control-group">
+          <label>{$vo.title}：{if condition="$vo[mark]"}(<font color="red">{$vo.mark}</font>){/if}</label>
+{switch name="vo.field_type"}
+                                    {case value="shortstring"}
+                                    <input type="text" name="{$vo.field}" value="{$vo.value}" class="form-control js_{$vo.field}" placeholder="{$vo.mark}" datatype="*2-20" <if condition="$vo.is_required eq 0">ignore="ignore"</if> errormsg="请输入2-20数字或字母">
+                                    {/case}
+                                    
+                                    {case value="string"}
+                                    <input type="text" name="{$vo.field}" value="{$vo.value}" class="form-control js_{$vo.field}" placeholder="{$vo.mark}" datatype="*2-50" {if condition="$vo.is_required eq 0"}ignore="ignore"{/if} errormsg="请输入2-50数字或字母"">
+                                    {/case}
+                                    
+                                    {case value="text"}
+                                    <input type="text" name="{$vo.field}" value="{$vo.value}" class="form-control js_{$vo.field}" placeholder="{$vo.mark}" datatype="*2-50" {if condition="$vo.is_required eq 0"}ignore="ignore"{/if} errormsg="请输入2-50数字或字母"">
+                                    {/case}
+                                    
+                                    {case value="bool"}
+                                    <input type="radio" name="{$vo.field}" value="1" class="js_{$vo.field}">是
+                                    <input type="radio" name="{$vo.field}" value="0" class="js_{$vo.field}">否
+                                    {/case}
+                                                                        
+                                    {case value="url"}
+                                    <input type="text" name="{$vo.field}" value="{$vo.value}" class="form-control js_{$vo.field}" placeholder="{$vo.mark}" datatype="url" {if condition="$vo.is_required eq 0"}ignore="ignore"{/if} errormsg="请输入合法网址">
+                                    {/case}
+                                    
+                                    {case value="phone"}
+                                    <input type="text" name="{$vo.field}" value="{$vo.value}" class="form-control js_{$vo.field}" placeholder="{$vo.mark}" datatype="m" {if condition="$vo.is_required eq 0"}ignore="ignore"{/if} errormsg="请输入合法手机号">
+                                    {/case}
+                                    
+                                    {case value="email"}
+                                    <input type="text" name="{$vo.field}" value="{$vo.value}" class="form-control js_{$vo.field}" placeholder="{$vo.mark}" datatype="e" {if condition="$vo.is_required eq 0"}ignore="ignore"{/if} errormsg="请输入合法邮箱地址">
+                                    {/case}
+                                    
+                                    {case value="pic"}
+                                    <img id="js_logobox" src="__ROOT__/Uploads/{$vo.value}" alt="点击更换LOGO" width="100px">
+                                    <input id="js_upload" name="{$vo.field}" type="file" value=""/>
+                                    {/case}
+                                    
+                                    {default /}
+                                    <input type="text" name="{$vo.field}" value="{$vo.value}" class="form-control col-sm-6 js_{$vo.field}" placeholder="{$vo.mark}" datatype="*2-20" {if condition="$vo.is_required eq 0"}ignore="ignore"{/if} errormsg="请输入2-20数字或字母">
+                                    {/switch}		  
+          <span class="Validform_checktip"></span>
+        </div>
+        <hr>
+		{/foreach} 
+
+        <div class="control-group">
+          <img style="display:none;" src="images/loading.gif" />
+          <input type="submit" class="btn btn-primary Sub" value="保存" />
+        </div>
+    </form>
+  </div>
+  <!-- 内容区块 end -->
+</div>
+<!-- 主内容 end -->
+      </div>
+    </div>
+    <!-- 主容器 end -->
+	
+<script>
+    $(function(){
+        var demo=$(".js_form").Validform({
+            tiptype:function(msg,o,cssctl){
+            if(!o.obj.is("form")){
+              var objtip=o.obj.parent().siblings(".Validform_checktip");
+              cssctl(objtip,o.type);
+              objtip.text(msg);
+           }
+        },
+            label:"label",
+            ajaxPost:true,
+            callback:function(data){
+              if(data.status=="ok"){
+                  alert(data.info);
+                  location.reload();
+              }else{
+                alert(data.info);
+              }
+            }
+        });
+        
+
+
+
+    });
+</script>	
+{include file="Public/footer"/}

@@ -1,0 +1,103 @@
+{include file="public/header" title="类别列表"/}
+    
+    <div  id="container"  class="container-fluid">
+      <div  class="row-fluid">
+
+<!-- 左侧导航栏 start -->
+{include file="public/sidebar"/}
+<!-- 左侧导航栏 end -->
+
+<div  id="content"  class="span10">
+  <div  class="pageTit page-header">
+    <h1>类别管理 </h1>
+    <div  class="opt">
+      <a  class="btn btn-info"  href="{:U('admin/category/add')}">添加类别</a>
+    </div>
+  </div>
+  
+  
+  <div  class="dataBox">
+    <table  class="table table-bordered table-striped center">
+      <thead>
+        <tr>
+          <th>类名ID</th>
+          <th>类别名称</th>
+          <th>添加时间</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+          
+        {foreach name="category_list" item="vo" }
+        <tr>
+          <td><a href="#">{$vo.id}</a></td>
+          <td>{$vo.title}</td>
+          <td>{$vo.add_time}</td>
+          <td>
+            {if condition="$vo.status eq 1"}
+            <button class="btn btn-xs btn-default js_update_status" data-id="{$vo.id}" data-is-system="{$vo.is_system}">禁用 </button>
+            {else/}
+            <button class="btn btn-xs btn-success js_update_status" data-id="{$vo.id}" data-is-system="{$vo.is_system}">恢复 </button>
+            {/if}
+            <button class="btn btn-xs btn-warning js_edit" data-id="{$vo.id}" data-is-system="{$vo.is_system}">修改</button>
+            <button class="btn btn-xs btn-danger js_del" data-id="{$vo.id}" data-is-system="{$vo.is_system}">删除 </button>
+          </td>
+        </tr>
+        {/foreach}
+           
+        
+      </tbody>
+    </table>
+  </div>
+  
+  
+  
+<div  class="pages">
+  <div  class="pagination pagination-right">
+    <div  class="total">总共<strong>13</strong>页 / <strong>20</strong>篇每页</div>
+    <ul>
+      <li><a  href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=post/admin/index&page_no=1">首页</a></li>
+                              <li  class="active">
+            <a  href="javascript:void(0);">1</a>
+          </li> 
+                                <li>
+            <a  href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=post/admin/index&page_no=2">2</a>
+          </li>
+                                <li>
+            <a  href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=post/admin/index&page_no=3">3</a>
+          </li>
+                                <li>
+            <a  href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=post/admin/index&page_no=4">4</a>
+          </li>
+                                <li>
+            <a  href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=post/admin/index&page_no=5">5</a>
+          </li>
+                                <li>
+            <a  href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=post/admin/index&page_no=6">6</a>
+          </li>
+                                <li>
+            <a  href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=post/admin/index&page_no=7">7</a>
+          </li>
+                                <li>
+            <a  href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=post/admin/index&page_no=8">8</a>
+          </li>
+                                <li>
+            <a  href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=post/admin/index&page_no=9">9</a>
+          </li>
+                            <li><a  href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=post/admin/index&page_no=2">后一页</a></li>
+        <li><a  href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=post/admin/index&page_no=13">末页</a></li>
+          </ul>
+  </div>
+</div>
+
+  
+</div>
+      </div>
+    </div>
+<script>
+    $(function(){
+        
+    
+    });
+</script>    
+{include file="public/footer"/}

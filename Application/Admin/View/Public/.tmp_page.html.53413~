@@ -1,0 +1,13 @@
+{if condition="$page"}
+<div  class="pages">
+  <div  class="pagination pagination-right">
+    <ul>
+   
+      <li >
+            {$page}
+      </li> 
+		  
+    </ul>
+  </div>
+</div>
+{/if}

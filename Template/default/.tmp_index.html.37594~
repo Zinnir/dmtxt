@@ -1,0 +1,4 @@
+{include file="public/header" title="后台首页"/}
+{Go:global name="site_name"/}
+
+

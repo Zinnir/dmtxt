@@ -1,0 +1,24 @@
+<div  id="header"  class="navbar navbar-fixed-top">
+      <div  class="navbar-inner">
+        <div  class="container">
+          <div><a  class="brand"  href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=admin">日日顺服务微社区管理中心</a></div>
+          <div>
+            <ul  class="nav pull-right">
+                <li  id="navUserInfo">
+                  <a  href="javascript:void(0);"  style="color:white;">欢迎您，<i  class="icon-user icon-white"></i>超级管理员&nbsp; </a>
+                </li>
+                <li  class="divider-vertical"  style="margin:0;"></li>
+				<li>
+                  <a  href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=admin"  style="color:white;">后台首页</a>
+                </li>
+                <li>
+                  <a  href="http://yz.app.socialjia.com/GoodaymartService/rrswsq"  target="_blank"  style="color:white;">网站首页</a>
+                </li>
+                <li  class="dropdown">
+                  <a  href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=admin/logout"  class="dropdown-toggle"  data-toggle="dropdown"  style="color:white;">退出</a>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>

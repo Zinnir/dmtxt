@@ -1,0 +1,160 @@
+{include file="public/header" title="产品列表"/}
+    <!-- 主容器 start -->
+    <div id="container" class="container-fluid">
+      <div class="row-fluid">
+
+<!-- 左侧导航栏 start -->
+{include file="public/sidebar"/}
+<!-- 左侧导航栏 end -->  
+<!-- 主内容 start -->
+<div id="content" class="span10">
+  <!-- 标题 start -->
+  <div class="pageTit page-header">
+    <h1>编辑产品信息</h1>
+    <div class="opt">
+    </div>
+  </div>
+  <!-- 标题 end -->
+  <!-- 内容区块 start -->
+  <div class="formBox">
+      <form id="addform" action="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=setting/admin/save" method="post" enctype="multipart/form-data">
+      <input name="id" type="hidden" value="" />
+        <!-- 标题 -->
+        <div class="control-group">
+          <label>产品名称：(<font color="red">10个字符以内</font>)</label>
+          <input type="text" name="info[title]" value="日日顺服务微社区" datatype="s2-10" nullmsg="请填写社区名称！" errormsg="社区名称至少2个最多10个字符！" />
+          <span class="Validform_checktip"></span>
+        </div>
+        <hr>
+        <!-- 图标 -->
+        <div class="control-group">
+          <label>社区LOGO：(<font color="red">上传尺寸60px*60px，目前仅支持jpg格式图片上传</font>)</label>
+          <iframe src="http://yz.app.socialjia.com/GoodaymartService/rrswsq/UploadImg/Upload.php?callback=focusThumb&max_size=" class="uploadfile" style="filter: alpha(opacity = 0); -moz-opacity: 0; -khtml-opacity: 0; opacity: 0; position: absolute; width: 80px; height: 30px;" id="coverUpload"></iframe>
+          
+          <a href="javascript:void(0);"><i class="icon-upload"></i>更换LOGO</a>
+            <script>
+            function focusThumb(url)
+            {
+              var thumbHtml = '<img src="'+url+'" width="60" height="60"/>';
+                $("#focusThumbBox").html(thumbHtml);
+                var thumbSrcHtml = '<input type="hidden" value="'+url+'"  name="info[logo]">';
+                $("#focusThumbSrc").html(thumbSrcHtml);
+            }
+            </script>
+         
+          
+            <p id="focusThumbBox">
+                        <img src="http://pic.weibopie.com/imgUpload/weixin/upload/201411201101251818.jpg" width="60" height="60"/>
+                        </p>
+            <p id="focusThumbSrc">
+                            <input type="hidden" value="http://pic.weibopie.com/imgUpload/weixin/upload/201411201101251818.jpg"  name="logo">
+                          </p>
+        </div>
+        <hr>
+        
+        <div class="control-group">
+          <label>默认会员头像：(<font color="red">用于未上传头像的会员头像展示，上传尺寸60px*60px，目前仅支持jpg格式图片上传</font>)</label>
+          <iframe src="http://yz.app.socialjia.com/GoodaymartService/rrswsq/UploadImg/Upload.php?callback=focusThumb&max_size=" class="uploadfile" style="filter: alpha(opacity = 0); -moz-opacity: 0; -khtml-opacity: 0; opacity: 0; position: absolute; width: 80px; height: 30px;" id="coverUpload"></iframe>
+          
+          <a href="javascript:void(0);"><i class="icon-upload"></i>更换默认头像</a>
+            <script>
+            function focusThumb(url)
+            {
+              var thumbHtml = '<img src="'+url+'" width="60" height="60"/>';
+                $("#avatarThumbBox").html(thumbHtml);
+                var thumbSrcHtml = '<input type="hidden" value="'+url+'"  name="info[default_avatar]">';
+                $("#avatarThumbSrc").html(thumbSrcHtml);
+            }
+            </script>
+         
+          
+            <p id="avatarThumbBox">
+                        <img src="http://pic.weibopie.com/imgUpload/weixin/upload/201412171722187749.jpg" width="60" height="60"/>
+                        </p>
+            <p id="avatarThumbSrc">
+                            <input type="hidden" value="http://pic.weibopie.com/imgUpload/weixin/upload/201412171722187749.jpg"  name="default_avatar">
+                          </p>
+        </div>
+        <hr>      
+        <div class="control-group">
+          <label>默认会员昵称：(<font color="red">10个字符以内，用于未设置昵称的会员前台显示</font>)</label>
+          <input type="text" name="info[default_nickname]" value="顺粉" datatype="*2-10" nullmsg="请填写会员默认昵称！" errormsg="默认昵称至少2个最多10个字符！" />
+          <span class="Validform_checktip"></span>
+        </div>
+        <hr>
+        <div class="control-group">
+          <label>会员发帖默认标签：(<font color="red">默认标签只能选择一个，多个标签请在帖子编辑里修改</font>)</label>
+                    <select name="info[default_tag_id]">
+                            <option value="15" >热门活动</option>
+                          <option value="14" >最新资讯</option>
+                          <option value="11" >人人创业</option>
+                          <option value="23" >精华帖子</option>
+                          <option value="17" >乐健达人</option>
+                          <option value="18" >乐居生活</option>
+                          <option value="22" selected>顺粉说说</option>
+                          <option value="16" >对话小顺</option>
+                          <option value="10" >每日一乐</option>
+                      </select>
+        </div>
+        
+        <hr>
+        
+        <div class="control-group">
+          <label>会员发帖时间限制：(<font color="red">防止会员无限制重复发帖，单位为秒，0为不限制</font>)</label>
+          <input type="text" name="info[publish_limit_time]" value="60" datatype="n1-4" nullmsg="请填写限制发帖时间间隔" errormsg="时间间隔必须为整数，单位为秒" />
+          <span class="Validform_checktip"></span>
+        </div>
+        <hr>
+        <div class="control-group">
+          <label>频繁发帖提示语：(<font color="red">会员在限制时间内发帖的提示信息</font>)</label>
+          <input type="text" style="width:600px" name="info[publish_limit_tip]" value="亲，您发帖太频繁了，请休息一会再发帖！" datatype="*4-50" nullmsg="请填写频繁发帖提示语" errormsg="提示语不能少于4个字符大于50个字符" />
+          <span class="Validform_checktip"></span>
+        </div>
+        <hr>
+        <div class="control-group">
+          <label>社区简介：(<font color="red">20个字符以内，用于非详情页微信分享显示</font>)</label>
+          <input type="text" style="width:600px" name="info[descript]" value="日日顺服务微社区邀您一起互动精彩生活" datatype="*2-20" nullmsg="请填写社区简介！" errormsg="社区简介至少2个最多20个字符！" />
+          <span class="Validform_checktip"></span>
+        </div>
+        
+        <div class="control-group">
+          <img style="display:none;" src="images/loading.gif" />
+          <input type="submit" class="btn btn-primary Sub" value="保存" />
+        </div>
+    </form>
+  </div>
+  <!-- 内容区块 end -->
+</div>
+<!-- 主内容 end -->
+      </div>
+    </div>
+    <!-- 主容器 end -->
+	
+<script>
+    $(function(){
+        var demo=$(".js_form").Validform({
+            tiptype:function(msg,o,cssctl){
+            if(!o.obj.is("form")){
+              var objtip=o.obj.parent().siblings(".Validform_checktip");
+              cssctl(objtip,o.type);
+              objtip.text(msg);
+           }
+        },
+            label:"label",
+            ajaxPost:true,
+            callback:function(data){
+              if(data.status=="ok"){
+                  alert(data.info);
+                  location.reload();
+              }else{
+                alert(data.info);
+              }
+            }
+        });
+        
+
+
+
+    });
+</script>	
+{include file="public/footer"/}

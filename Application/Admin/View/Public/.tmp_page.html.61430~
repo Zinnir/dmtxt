@@ -1,0 +1,16 @@
+{if condition="$page"}
+<div  class="pages">
+  <div  class="pagination pagination-right">
+    <div  class="total">总共<strong>13</strong>页 / <strong>20</strong>篇每页</div>
+    <ul>
+      <li>
+        <a  href="http://yz.app.socialjia.com/GoodaymartService/rrswsq/index.php?anu=post/admin/index&page_no=1">首页</a>
+	  </li>
+      <li  class="active">
+            <a  href="javascript:void(0);">1</a>
+      </li> 
+		  
+    </ul>
+  </div>
+</div>
+{/if}

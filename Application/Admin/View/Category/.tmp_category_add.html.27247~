@@ -1,0 +1,74 @@
+{include file="public/header" title="添加类别"/}
+    <!-- 主容器 start -->
+    <div id="container" class="container-fluid">
+      <div class="row-fluid">
+
+<!-- 左侧导航栏 start -->
+{include file="public/sidebar"/}
+<!-- 左侧导航栏 end -->  
+<!-- 主内容 start -->
+<div id="content" class="span10">
+  <!-- 标题 start -->
+  <div class="pageTit page-header">
+    <h1>{if condition="$category_info"}编辑{else/}添加{/if}类别 </h1>
+    <div class="opt">
+      <a class="btn btn-info" href="{:U('admin/category/index')}">返回类别列表</a>
+    </div>
+  </div>
+  <!-- 标题 end -->
+  <!-- 内容区块 start -->
+  <div class="formBox">
+      <form id="addform" action="{:U('admin/category/save')}" method="post" enctype="multipart/form-data">
+      <input name="id" type="hidden" value="{$category_info.id}" />
+        <!-- 标题 -->
+        <div class="control-group">
+          <label>类别名称：(<font color="red">最少2个最多50个汉字</font>)</label>
+          <input type="text" name="title" value="{$category_info.title}" {empty name="category_info"}ajaxurl="{:U("admin/category/check_title")}"{/empty} datatype="*2-50" nullmsg="请填写类别名称！" errormsg="类别名称至少2最多50个汉字！" />
+          <span class="Validform_checktip"></span>
+        </div>
+        
+         <!-- 显示排序(view_sort) -->
+        <div class="control-group">
+          <label>显示排序：（数字越大越靠前）</label>
+          <input type="text" name="sort" value="{$category_info.sort}" datatype="n1-2" nullmsg="请输入排序号！" errormsg="排序号只能为1-2位数字！"/>
+          <span class="Validform_checktip"></span>
+        </div>
+		
+        <div class="control-group">
+          <img style="display:none;" src="images/loading.gif" />
+          <input type="submit" class="btn btn-primary Sub" value="保存" />
+        </div>
+    </form>
+  </div>
+  <!-- 内容区块 end -->
+</div>
+<!-- 主内容 end -->
+<script>
+$(function(){
+  //提交表单合法性验证 
+    $("#addform").Validform({ 
+    tiptype:function(msg,o,cssctl){ 
+      if(!o.obj.is("form")){ 
+          var objtip=o.obj.siblings(".Validform_checktip");
+          cssctl(objtip,o.type);
+          objtip.text(msg); 
+      }
+    },
+	label:"label",
+    ajaxPost:true,
+    callback:function(data){
+      if(data.status=="ok"){
+          alert(data.info);
+		  window.location.href = "{:U('admin/category/index')}";
+      }else{
+        alert(data.info);
+      }
+    }
+  });
+})
+</script>
+   
+      </div>
+    </div>
+    <!-- 主容器 end -->
+{include file="public/footer"/}

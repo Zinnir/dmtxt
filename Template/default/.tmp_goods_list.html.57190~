@@ -1,0 +1,32 @@
+{include file="public/header" title="产品列表"/}
+    <!-- start page -->
+    <div class="page">
+    
+    
+            <!-- start list menu -->
+                		
+            <div class="simplebox">
+            	<h1 class="titleh">产品列表</h1>
+                		
+           	 <ul class="list-menu">
+           	 	{if condition="$goods_list"}
+           	 	{volist name="goods_list" id="vo"}
+             	<li><a href="{:U("home/goods/$vo[id]")}.html"><b>{$vo.title}</b></a></li>
+				{/volist}
+				{else/}
+				<li><a href="javascript:void(0);"><b>暂无产品</b></a></li>
+				{/if}
+             </ul>
+             
+             </div>
+             
+            <!-- end list menu -->
+
+            <!-- start top button -->
+            <div class="topbutton"><a href="#header"><span>Top</span></a></div>
+            <!-- end top button -->
+            
+            
+            
+            <!-- start footer -->
+{include file="public/footer"/}

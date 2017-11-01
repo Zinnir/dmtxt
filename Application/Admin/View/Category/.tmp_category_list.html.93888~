@@ -1,0 +1,60 @@
+{include file="public/header" title="类别列表"/}
+    
+    <div  id="container"  class="container-fluid">
+      <div  class="row-fluid">
+
+<!-- 左侧导航栏 start -->
+{include file="public/sidebar"/}
+<!-- 左侧导航栏 end -->
+
+<div  id="content"  class="span10">
+  <div  class="pageTit page-header">
+    <h1>类别管理 </h1>
+    <div  class="opt">
+      <a  class="btn btn-info"  href="{:U('admin/category/add')}">添加类别</a>
+    </div>
+  </div>
+  
+  
+  <div  class="dataBox">
+    <table  class="table table-bordered table-striped center">
+      <thead>
+        <tr>
+          <th>类名ID</th>
+          <th>类别名称</th>
+          <th>排序</th>
+          <th>添加时间</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+          
+        {foreach name="category_list" item="vo" }
+        <tr>
+          <td><a href="#">{$vo.id}</a></td>
+          <td>{$vo.title}</td>
+          <td>{$vo.sort}</td>
+          <td>{$vo.add_time}</td>
+          <td>
+          	<a title="编辑" class=" btn btn-mini btn-info js_edit" href="{:U("admin/category/edit?id=$vo[id]")}">编辑</a>
+            <a title="删除" class=" btn btn-mini btn-danger js_del" href="{:U("admin/category/del?id=$vo[id]")}">删除</a>
+          </td>
+        </tr>
+        {/foreach}
+           
+        
+      </tbody>
+    </table>
+  </div>
+
+  
+</div>
+      </div>
+    </div>
+<script>
+    $(function(){
+        
+    
+    });
+</script>    
+{include file="public/footer"/}

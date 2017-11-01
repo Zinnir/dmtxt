@@ -1,0 +1,5 @@
+{include file="public/header" title="后台首页"/}
+这是默认风格
+{Go:global name="site_name"/}
+
+

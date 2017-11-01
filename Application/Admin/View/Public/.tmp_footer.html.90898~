@@ -1,0 +1,7 @@
+    <!-- 脚部 start -->
+    <div id="footer">
+        {Go:global name="site_copyright" /}
+    </div>
+    <!-- 脚部 end -->
+  </body>
+</html>

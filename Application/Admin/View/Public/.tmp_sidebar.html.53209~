@@ -1,0 +1,62 @@
+<div id="sideBar" class="span2">
+  <ul class="nav nav-tabs nav-stacked" id="admin-menu-bar">
+  	
+      <li class="active main-menu">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-list-alt"></i> 产品管理</a>
+        <ul class="nav nav-list sub-menu">
+          <li class=""> 
+            <a href="{:U('Goods/index')}" class="noborder">产品列表</a>
+            <a href="{:U('Goods/export')}" class="noborder">导出产品</a>
+            <a href="{:U('Goods/import')}" class="noborder">导入产品</a>
+          </li> 
+        </ul>
+      </li>
+
+      <li class="active main-menu">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-th-large"></i> 品牌管理</a>
+        <ul class="nav nav-list sub-menu">
+          <li class=""> 
+            <a href="{:U('Brand/index')}" class="noborder">品牌列表</a>
+          </li> 
+        </ul>
+      </li>
+	  
+      <li class="active main-menu">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-tags"></i> 类别管理</a>
+        <ul class="nav nav-list sub-menu">
+          <li class=""> 
+            <a href="{:U('Category/index')}" class="noborder">类别列表</a>
+          </li> 
+        </ul>
+      </li>
+	  
+      <li class="active main-menu">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-random"></i> 机型管理</a>
+        <ul class="nav nav-list sub-menu">
+          <li class=""> 
+            <a href="{:U('Type/index')}" class="noborder">机型列表</a>
+          </li> 
+        </ul>
+      </li>	  
+	  
+      <li class="active main-menu ">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-lock"></i>安全管理</a>
+        <ul class="nav nav-list sub-menu">
+          <li class=""> 
+            <a href="{:U('Password/edit')}" class="noborder">修改用户名/密码</a>
+          </li> 
+        </ul>
+      </li>	
+	    	        
+      <li class="active main-menu ">
+        <a href="javascript:void(0);" class="main-menu-tit"><i class="icon-cog"></i>系统设置</a>
+        <ul class="nav nav-list sub-menu">
+          <li class=""> 
+            <a href="{:U('Config/base')}" class="noborder">基本设置</a>
+          </li> 
+        </ul>
+      </li>
+	  
+      
+  </ul>
+</div>
