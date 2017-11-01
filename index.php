@@ -23,7 +23,7 @@ define('APP_PATH','./Application/');
 // 定义应用版本
 define('APP_VERSION','V1.0');
 
-// 定义应用最近更新时间王鹏
+// 定义应用最近更新时间
 define('APP_UPDATETIME','20141120');
 
 // 引入ThinkPHP入口文件
